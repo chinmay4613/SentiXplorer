@@ -133,14 +133,14 @@ def productanalysis(request):
     if request.method == 'POST':
         blogname = request.POST.get("blogname", "")
         text_file = open(
-            "/Users/sj941/Documents/GitHub/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt",
+            "D:/NCSU/Sem 1/Software Engineering/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt",
             "w")
         text_file.write(blogname)
         text_file.close()
         os.system(
-            'scrapy runspider /Users/sj941/Documents/GitHub/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
+            'scrapy runspider D:/NCSU/Sem 1/Software Engineering/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
         final_comment = []
-        with open('/Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/reviews.json') as json_file:
+        with open('D:/NCSU/Sem 1/Software Engineering/SE_Project1/sentimental_analysis/reviews.json') as json_file:
             data = json.load(json_file)
             for p in range(1, len(data) - 1):
                 a = data[p]['comment']

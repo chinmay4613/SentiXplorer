@@ -16,18 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import realworld.views
-from django.conf.urls import url
+from django.urls import path, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
-    url(r'^$',realworld.views.analysis,name='analysis'),
-    url(r'^input',realworld.views.input,name = 'input'),
-    url(r'^productanalysis',realworld.views.productanalysis,name = 'product analysis'),
-    url(r'^textanalysis',realworld.views.textanalysis,name = 'text analysis'),
-    url(r'^audioanalysis',realworld.views.audioanalysis,name = 'audio analysis')
+    path('admin/', admin.site.urls),
+    path('',realworld.views.analysis,name='analysis'),
+    path('/input',realworld.views.input, name='input'),
+    path('/productanalysis',realworld.views.productanalysis, name='product analysis'),
+    path('/textanalysis',realworld.views.textanalysis, name='text analysis'),
+    path('/audioanalysis',realworld.views.audioanalysis, name='audio analysis')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
