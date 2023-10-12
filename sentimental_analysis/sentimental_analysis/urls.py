@@ -24,10 +24,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',realworld.views.analysis,name='analysis'),
-    path('/input',realworld.views.input, name='input'),
-    path('/productanalysis',realworld.views.productanalysis, name='product analysis'),
-    path('/textanalysis',realworld.views.textanalysis, name='text analysis'),
-    path('/audioanalysis',realworld.views.audioanalysis, name='audio analysis')
+    path('input',realworld.views.input, name='input'),
+    path('productanalysis',realworld.views.productanalysis, name='product analysis'),
+    path('textanalysis',realworld.views.textanalysis, name='text analysis'),
+    path('audioanalysis',realworld.views.audioanalysis, name='audio analysis')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

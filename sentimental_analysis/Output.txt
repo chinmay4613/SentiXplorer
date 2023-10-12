@@ -1,466 +1,115 @@
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Nischal Badarinath Kashyap 
-nkashya@ncsu.edu​ | 919-527-8781 | linkedin.com/in/nischal-kashyap-a9937611b | ​github.com/NischalKash 
-__________________________________________________________________________________________________________ 
-Objective  
-Self-motivated student with a Master’s degree in Computer Science and a work experience of 2 Years as a Software Developer. I
-   
-will be seeking a Software Engineer role for a full time opportunity starting May 2021. 
-_____________________________________________________________________________________________________ 
-Education 
-North Carolina State University, Raleigh, USA
-Masters in Computer Science
-May 2021 | CGPA - 3.56 
-_____________________________________________________________________________________________ 
-Skills 
-Programming Languages​ - C, Embedded C, C++, Python, JAVA, UNIX Systems Programming, MySQL, HTML, CSS, JavaScript 
-Technologies​  -  Perforce, TeraTerm, DLT Analyser, CPAS, WinScp, Sodera, Ellysis, JIRA, Elvis, GitHub, Frontline, Crucible,  
-Framework​ - Bluetooth Specification, Harman Framework, Connectivity Framework, File in User Space Systems(FUSE), Django 
-Coursework​ - Algorithms, Operating Systems, Networks, Data Structures, Object Oriented Programming, Data Mining, Artificial  
-_______________________________________________________________________________________________________________ 
-Work Experience 
-Graduate Teaching Assistant - North Carolina State University
-● Teaching Assistant for the course BUS 443 Web Development for Business Applications. 
-● Assist professor in preparing the coursework for the semester and aid students by clarifying concepts and evaluating them. 
-       ​Oct 2017 - Jul 2019 
-Wipro Technologies - Harman International(Client)
-● Software Developer in the Connected Car division for Harman International Account for bluetooth media module. Skilled in
- 
- 
-
-Visvesvaraya Technological University, Belgaum, India
-Bachelor of Engineering in Computer Science 
-May 2017 | First Class with Distinction
-
-    Confluence, Buildcentral, GNU Debugger, mediactl, ioctl commands, keras, scikit learn, BootStrap 
-
-Intelligence, Database Management Systems, Software Engineering 
-
-       ​Aug 2020 - Present 
-
-middleware development and maintenance of Bluetooth profiles such as A2DP, HFP, BIP and AVRCP for higher end projects. 
-
-● Debugged issues on AVRCP browsing, AVRCP commands, Events, Responses and Audio Buffering issues reported from clients.  
-● Resolved crash/memory issues using backtracking methods with the help of core dumps using GNU Debugger.  
-● Implemented a Bluetooth Feature Request - AVRCP STOP Command for Harman using mediactl. 
-       ​Jan 2016 - Jun 2016 
-BSNL - Project Trainee
-●
-_______________________________________________________________________________________________________________ 
-Projects 
-● Connection - Python, Django Framework, JavaScript, HTML, CSS, SQLite
-
-Implemented an algorithm for User ID automation in Python which required mapping between the user and the port assigned to. 
-
- 
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Created a Web based Application with User Interface. The users upload their family members as objects onto the website. On a broad
- 
- 
-scale with abundant data, the application will find out whether members are connected using tree search methods. 
-
-   
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-● Pokemon​ ​Battle - Python(Socket Programming) 
-
- 
-
-A pokemon game implemented using socket programming with two trainers able to battle out each other by selecting pokemons from
- 
-the given roster. The game's implementation is in the initial stage with the backend logic being coded. 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
+Mihir Nikam 
 
- 
-
- 
-
-● Database Management Systems - JAVA, MySQLand JDBC
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Designed a database for an online library system to make book transactions and receive orders from distributors. The application level
- 
-programming was written in JAVA while MySQL was used to perform queries on the database internally. 
-
-● Arrhythmia Classifier - Python, KNN K FoldCV, Random Forests  
- 
-
-Developed a K Fold Cross Validation KNN algorithm from scratch to classify the arrhythmia dataset using major attributes. This was
- 
- 
-part of the course project and the algorithm obtained an efficiency of 68% in classifying the right data points. 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-● United States Path Routing - Python
-
- 
- 
-
- 
-
- 
-
- 
-
- 
-
-A Depth First Search, A* and Recursive Best First Search algorithms were implemented to find the best path between a source and a
-   
-destination in a map dataset provided by the instructor. 
-
-   
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-● Data Analytics - Python
- 
-
- 
-
- 
-
-Developed an AI model based on Bloom’s Taxonomy that was capable of converting a prolonged lecture video to a short summary
- 
- 
-video. A user defined word set was initially defined and data analysis was performed using NLP and Google API’s. 
+Raleigh, NC 27606 | mvnikam@ncsu.edu | +1 (919) 395-4112  | linkedin.com/in/mihir-nikam/ 
 
+EDUCATION 
+Master of Computer Science, North Carolina State University, Raleigh, USA                                                Expected: May 2025 
+Coursework: Design and Analysis of Algorithms, Software Engineering, Object-Oriented Design & Development 
  
-
+Bachelor of Technology (Information Technology), Mumbai University, India (GPA 9.46/10)                  Aug 2019 - May 2023  
+Coursework: Operating Systems, Database Management Systems, Computer Networks, Data Analysis, Natural Language 
+Processing, Artificial Intelligence, Machine Learning 
  
-
+TECHNICAL SKILLS 
+Languages: Java, Python, JavaScript, C, SQL, HTML5, CSS, PHP 
+Databases: MySQL, MongoDB, PostgreSQL 
+Tools/Frameworks: Node, React, Django, Figma, Selenium, Spring Boot, Git, Microsoft Azure, Heroku, TensorFlow, NumPy 
  
+PROFESSIONAL EXPERIENCE 
+Software Engineer Intern | Barclays, Pune, India          
 
- 
+                                                                        Jun 2022 - Jul 2022 
 
- 
+●  Automated the Start of Week Database and User Interface checks using Selenium Web-driver and Spring Boot. 
+●  Directed a backend application in Java by adhering to the general syntax of the team that can be used across 17 other 
 
- 
+applications for automating User Interface checks. 
 
- 
+●  Coded a Python script for rigorous SQL database integrity testing and anomaly detection. 
+●  Saved a total of 2000+ man-hours annually through automation. 
 
  
+Co-founder and Chief Technology Officer | Growth Heads Digital, Pune, India                                   Aug 2020 - Mar 2023 
+●  Developed  and  delivered  cutting-edge  Machine  Learning  business  solutions  and  bespoke  websites to  global  clients 
 
- 
+utilizing technologies such as ReactJS, MySQL, PHP, Figma, Django, jQuery, Python, and cPanel. 
 
+●  Oversaw a dynamic team of 40+ interns, built partnerships with 20+ clients, and successfully executed 25+ projects. 
+●  Gained recognition in esteemed global publications, like Business Standard, The Print, and Asian News International. 
  
+Software Engineer Intern | Carrot Consultancy Pvt. Ltd., Mumbai, India                                               Jan 2022 - Jun 2022 
 
- 
+●  Engineered an interactive AI-assistant with Dialogflow, NodeJS, and Google Calendar APIs which streamlined doctor's 
 
- 
+appointment bookings, cancellations, and rescheduling via Named Entity Recognition. 
 
- 
+●  Achieved a 33.33% reduction in appointment booking time and optimized the cost-efficiency by 80%. 
 
  
+Backend Developer Intern | Lokavidya Technologies, Mumbai, India                       
 
- 
+                           Jul 2021 - Jan 2022 
 
- 
+●  Created a web-based video conferencing application for educational institutions using the MERN stack. 
+●  Instilled features like creating, deleting, and recording meetings leveraging the BigBlueButton and JITSI v2 APIs while 
 
-● Security and Robotics  - C, Embedded C, Python and MySQL(Socket Programming) 
+formulating a Single Sign On (SSO) system to log into multiple applications. 
 
- 
+●  Migrated base code from GitLab to virtual machines on Microsoft Azure and managed the Domain Name System (DNS). 
 
- 
+ACADEMIC PROJECTS 
+Software Development - Alpheta (IMDB for NFTs) 
 
- 
+  Designed and developed a social application using the MERN stack, enabling users to synchronize their blockchain 
 
- 
+based wallets, showcase their NFT collections, and actively engage in discussions, reviews, and ratings of NFTs. 
 
- 
+  Pitched the project to a range of esteemed venture capitalist firms, including YCombinator and 100xVC, positioning 
 
  
 
  
 
-The project was developed to have multiple robots perform serial verification and authentication of users while being autonomous.
- 
-This was intended to be a prototype to a larger scale project. The project was recommended for copyrights. 
- 
- 
- 
+it as a compelling startup concept. 
 
  
+Machine Learning - EmoFy 
 
- 
+  Pioneered a custom-made machine learning model which proficiently detects human emotions and offer music 
 
- 
+recommendations based on the mood with accuracy on par with VGG16. 
 
- 
+  Employed libraries like OpenCV, TensorFlow, Keras, and NumPy and created the web app using Flask. 
 
  
+Python Development - Foodversity (TOP 25 at HackinUTU Hackathon - 450+ teams) 
 
- 
+  Built a B2B food management web app with Django and SQLite DB that routed excess food inventory from food 
 
- 
+businesses to non-profit organizations that cater to feeding the underprivileged. 
 
  
+Web Scraping and Data Analysis – Blog Sentiment Analysis 
 
+  Harvested data from over 100 blogs systematically through BeautifulSoup, meticulously eliminating stop words, and 
  
 
- 
+then computed various metrics, including the Fog Index and Polarity Score, to enhance the website's SEO ranking. 
 
- 
+Artificial Intelligence - Connect-4 Engine 
 
- 
+  Created a Python application implementing the Minimax Algorithm and Alpha-Beta Pruning to emulate human-level 
 
- 
+intelligence in the Connect-4 game for predicting optimal moves with the highest probability of winning. 
 
-_________________________________________________________________________________________________________ 
-Activities 
-● Athletics 
-● Leadership 
-● Volunteer
-● Academics
+LEADERSHIP ACTIVITIES AND AWARDS 
 
-Represented North Carolina State University’s Cricket Team. School and College Level Volleyball Player. 
-Marketing lead for College Fest Semaphore 2015. Leader of fest promotion teams marketing at various colleges. 
+●  Winner, Top-10 startups, Udyami: Received recognition for exceptional contributions and achievements. 
+●  Vice-Chairperson,  Computer  Society  of  India  (SPIT):  Cultivated  inter-college  relationships,  curated  workshops,  and 
 
-Event Organizer at Semaphore 2014 and 2015. Women's Day Host at Wipro Technologies for March 2018. 
+skillfully orchestrated a successful National Hackathon, drawing participation from over 650 individuals across India. 
 
-10th Rank in Math Talent Exam for Bangalore. College Topper in Operational Research Course. 
+●  Captain, State Volleyball Team: Felicitated as the “Best Player” at the State Playoffs. 
+●  Board of Directors, Rotaract (SPIT): Volunteered for teaching English/Maths to children and led Beach Clean-up Drives. 
 
 
