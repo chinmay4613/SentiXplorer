@@ -1,0 +1,13 @@
+ 
+<h2>Welcome back!!</h2>
+<form method="post">
+   {% csrf_token %}
+     <p>
+       <label>Username</label><br>
+       <input type="text" name="name" id="logName" placeholder="Username"><br><br>
+       <label>Password</label><br>
+       <input type="password" name="password" id="logPassword" placeholder="Password"><br><br>
+     </p>
+ </form>
+ <a href='home'><button>Sign in</button></a>
+

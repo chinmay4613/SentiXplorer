@@ -12,6 +12,36 @@ import os
 import json
 import speech_recognition as sr
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from .signup import SignUpForm
+from .models import Profile
+from django.contrib.auth import authenticate, login
+
+def update_user_data(user):
+    Profile.objects.update_or_create(user=user,)
+
+def signin(request):
+    return render(request, 'realworld/signin.html')
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()
+
+            # load the profile instance created by the signal
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+
+            # login user after signing up
+            user = authenticate(username=user.username, password=raw_password)
+            login(request, user)
+
+            # redirect user to home page
+            return render(request, 'realworld/signin.html')
+    else:
+        form = SignUpForm()
+    return render(request, 'realworld/signup.html', {'form': form})
 
 def pdfparser(data):
 
