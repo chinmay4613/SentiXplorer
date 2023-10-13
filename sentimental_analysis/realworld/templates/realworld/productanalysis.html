@@ -2,6 +2,9 @@
 <html style="font-size: 16px;">
 {% load static %}
   <head>
+    {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
@@ -81,13 +84,16 @@
         </nav>
       </div></header>
 <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
+<br>
+<br>
 <form action = "{% url "product analysis" %}" method = "post">
         {% csrf_token %}
     
     <div class="container" style="width: 100%;">
         <label for = "blogname">Blog URL</label>
+        <br>
     <input class="form-control form-control-lg" id = "blogname" type="text" name="blogname">
-    
+    <br>
     <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
 </div>
 </form>

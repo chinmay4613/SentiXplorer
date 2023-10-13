@@ -2,6 +2,9 @@
 <html style="font-size: 16px;">
 {% load static %}
   <head>
+    {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
@@ -85,6 +88,8 @@
 
 
 <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
+<br>
+<br>
 <form action = "{% url "text analysis" %}" method = "post" enctype="multipart/form-data">
         {% csrf_token %}
     <label for = "Text"></label>

@@ -1,4 +1,8 @@
- 
+ <html>
+  <head>{% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}</head>
+<body>
 <h2>Sign up</h2>
  <form method="post">
     {% csrf_token %}
@@ -19,4 +23,5 @@
   <br>
   <label>Already have an account? </label>
   <a href='signin'><button>Sign in</button></a>
-
+</body>
+  </html>
