@@ -73,6 +73,23 @@
   
   <div id="main">
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Document Analysis</span>
+    
+    <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
+  <br>
+  <br>
+  <form action="{% url 'input' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="container">
+      <input class="form-control form-control-lg" type="file" name="document">
+      <br>
+      <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;"
+        type="submit">Submit</button>
+    </div>
+
+
+
+  </form>
   </div>
   
   <script>
@@ -90,25 +107,6 @@
   </script> 
 <br>
 <br>
-  <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
-  <br>
-  <br>
-  <form action="{% url 'input' %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-
-    <div class="container">
-      <input class="form-control form-control-lg" type="file" name="document">
-      <br>
-      <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;"
-        type="submit">Submit</button>
-    </div>
-
-
-
-  </form>
-
-
-
 </body>
 
 </html>

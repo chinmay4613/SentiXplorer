@@ -71,6 +71,20 @@
     
     <div id="main">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Audio Analysis</span>
+      <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
+  <br>
+  <br>
+<form action = "{% url "audio analysis" %}" method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        <div class="container">
+    <input class="form-control form-control-lg" type="file" name="document">
+    <br>
+    <div class="text-center">
+    <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
+  </div>  
+  </div>
+</form>
     </div>
     
     <script>
@@ -86,20 +100,7 @@
       document.body.style.backgroundColor = "white";
     }
     </script> 
-  <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
-  <br>
-  <br>
-<form action = "{% url "audio analysis" %}" method = "post" enctype="multipart/form-data">
-        {% csrf_token %}
-    
-        <div class="container">
-    <input class="form-control form-control-lg" type="file" name="document">
-    <br>
-    <div class="text-center">
-    <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
-  </div>  
-  </div>
-</form>
+  
 
 </body>
 </html>

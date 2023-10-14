@@ -69,6 +69,20 @@ body {
     
     <div id="main">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Product Analysis</span>
+      <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
+<br>
+<br>
+<form action = "{% url "product analysis" %}" method = "post">
+        {% csrf_token %}
+    
+    <div class="container" style="width: 100%;">
+        <label for = "blogname">Blog URL</label>
+        <br>
+    <input class="form-control form-control-lg" id = "blogname" type="text" name="blogname">
+    <br>
+    <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
+</div>
+</form>
     </div>
     
     <script>
@@ -84,20 +98,7 @@ body {
       document.body.style.backgroundColor = "white";
     }
     </script>     
-<h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
-<br>
-<br>
-<form action = "{% url "product analysis" %}" method = "post">
-        {% csrf_token %}
-    
-    <div class="container" style="width: 100%;">
-        <label for = "blogname">Blog URL</label>
-        <br>
-    <input class="form-control form-control-lg" id = "blogname" type="text" name="blogname">
-    <br>
-    <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
-</div>
-</form>
+
 
 </body>
 </html>
