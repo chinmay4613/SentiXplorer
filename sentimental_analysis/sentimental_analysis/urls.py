@@ -23,26 +23,22 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< Updated upstream
+
     path('home', realworld.views.analysis, name='analysis'),
     path('input', realworld.views.input, name='input'),
-    path('productanalysis', realworld.views.productanalysis,
-         name='product analysis'),
+    path('productanalysis', realworld.views.productanalysis,name='product analysis'),
     path('textanalysis', realworld.views.textanalysis, name='text analysis'),
     path('audioanalysis', realworld.views.audioanalysis, name='audio analysis'),
-=======
     path('home',realworld.views.analysis,name='analysis'),
     path('input',realworld.views.input, name='input'),
     path('productanalysis',realworld.views.productanalysis, name='product analysis'),
     path('textanalysis',realworld.views.textanalysis, name='text analysis'),
     path('audioanalysis',realworld.views.audioanalysis, name='audio analysis'),
     path('ytanalysis',realworld.views.ytanalysis, name='youtube comments analysis'),
->>>>>>> Stashed changes
     path('signup', realworld.views.signup, name='signup'),
     path('signin', realworld.views.signin, name='signin'),
     path('', realworld.views.signup, name='signup'),
-    path('ytanalysis', realworld.views.ytanalysis,
-         name='youtube comments analysis'),
+    path('ytanalysis', realworld.views.ytanalysis,name='youtube comments analysis'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

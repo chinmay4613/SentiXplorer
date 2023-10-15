@@ -15,16 +15,17 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from .signup import SignUpForm
 from .models import Profile
 from django.contrib.auth import authenticate, login
-<<<<<<< Updated upstream
+from django.contrib.auth import authenticate, login
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
 from django.contrib.auth import authenticate, login
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 
-=======
-from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
->>>>>>> Stashed changes
 
+    
 def update_user_data(user):
     Profile.objects.update_or_create(user=user,)
 
