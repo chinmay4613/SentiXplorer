@@ -66,27 +66,19 @@ padding: 16px;
     <a href="input">Document Analysis</a>
     <a href="productanalysis">Product Analysis</a>
     <a href="textanalysis">Text Analysis</a>
-    <a href="ytanalysis">Youtube Video Comment Analysis</a>
   </div>
   
   <div id="main">
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Text Analysis</span>
-    <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
-<br>
-<br>
-<form action = "{% url "text analysis" %}" method = "post" enctype="multipart/form-data">
-        {% csrf_token %}
-    <label for = "Text"></label>
-    <div class="container" style="width: 100%;">
-    <textarea class="form-control form-control-lg" type="textarea" name="Text" rows = "10" cols="50" >
-    </textarea>
-    <br>
-    <br>
-    <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
-    </div>
-</form>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; ERROR</span>
+    
   </div>
-  
+  <div style="margin-left: 20%; font-size: 24px">
+    <br>
+  <p>Please check your input, seems like you have entered something wrong.</p>
+  <br>
+    <p>Thanks!!</p>
+  <img height="500px" width="500px" src="../../media/error.jpeg" style="margin-left: 20%;">
+</div>
   <script>
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";

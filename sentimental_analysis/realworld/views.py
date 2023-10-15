@@ -15,10 +15,15 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from .signup import SignUpForm
 from .models import Profile
 from django.contrib.auth import authenticate, login
+<<<<<<< Updated upstream
 from django.contrib.auth import authenticate, login
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 
+=======
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+>>>>>>> Stashed changes
 
 def update_user_data(user):
     Profile.objects.update_or_create(user=user,)
@@ -212,6 +217,51 @@ def textanalysis(request):
     else:
         note = "Enter the Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
+    
+def get_video_comments(youtube, **kwargs):
+    comments = []
+    results = youtube.commentThreads().list(**kwargs).execute()
+
+    while results:
+        for item in results["items"]:
+            comment = item["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
+            comments.append(comment)
+
+        # Check if there are more comments
+        if "nextPageToken" in results:
+            kwargs["pageToken"] = results["nextPageToken"]
+            results = youtube.commentThreads().list(**kwargs).execute()
+        else:
+            break
+
+    return comments
+
+def ytanalysis(request):
+    if request.method == 'POST':
+        ytid = request.POST.get("ytid", "")
+        print(ytid)
+        API_KEY = "AIzaSyAMkKPItHCg6LbG2WUu1aNX0SJQ57tdUFU"  # Replace with your API key or set up OAuth through GCP
+        VIDEO_ID = ytid  # Replace with the YouTube video ID
+
+        youtube = build("youtube", "v3", developerKey=API_KEY)
+        # Get comments for a specific video
+        try:
+            comments = get_video_comments(youtube, part="snippet", videoId=VIDEO_ID, textFormat="plainText")
+            text_data = ''
+            for i, comment in enumerate(comments, 1):
+                text_data+=f"{comment}"
+
+            final_comment = text_data.split('.')
+
+            # final_comment is a list of strings!
+            result = detailed_analysis(final_comment)
+            print(result)
+            return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
+        except:
+            return render(request, 'realworld/error.html')
+    else:
+        note = "Enter the video ID to be analysed!"
+        return render(request, 'realworld/ytanalysis.html', {'note': note})
 
 
 def audioanalysis(request):
