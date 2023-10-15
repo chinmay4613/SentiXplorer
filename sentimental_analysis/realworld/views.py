@@ -240,10 +240,9 @@ def get_video_comments(youtube, **kwargs):
 def ytanalysis(request):
     if request.method == 'POST':
         ytid = request.POST.get("ytid", "")
-        print(ytid)
         API_KEY = "AIzaSyAMkKPItHCg6LbG2WUu1aNX0SJQ57tdUFU"  # Replace with your API key or set up OAuth through GCP
         VIDEO_ID = ytid  # Replace with the YouTube video ID
-
+        
         youtube = build("youtube", "v3", developerKey=API_KEY)
         # Get comments for a specific video
         try:
@@ -256,7 +255,7 @@ def ytanalysis(request):
 
             # final_comment is a list of strings!
             result = detailed_analysis(final_comment)
-            print(result)
+            
             return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
         except:
             return render(request, 'realworld/error.html')
@@ -308,55 +307,6 @@ def sentiment_analyzer_scores(sentence):
     score = analyser.polarity_scores(sentence)
     # print("{:-<40} {}".format(sentence, str(score)))
     return score
-
-
-def get_video_comments(youtube, **kwargs):
-    comments = []
-    results = youtube.commentThreads().list(**kwargs).execute()
-
-    while results:
-        for item in results["items"]:
-            comment = item["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
-            comments.append(comment)
-
-        # Check if there are more comments
-        if "nextPageToken" in results:
-            kwargs["pageToken"] = results["nextPageToken"]
-            results = youtube.commentThreads().list(**kwargs).execute()
-        else:
-            break
-
-    return comments
-
-
-def ytanalysis(request):
-    if request.method == 'POST':
-        ytid = request.POST.get("ytid", "")
-        print(ytid)
-        # Replace with your API key or set up OAuth through GCP
-        API_KEY = "AIzaSyAMkKPItHCg6LbG2WUu1aNX0SJQ57tdUFU"
-        VIDEO_ID = ytid  # Replace with the YouTube video ID
-
-        youtube = build("youtube", "v3", developerKey=API_KEY)
-        # Get comments for a specific video
-        comments = get_video_comments(
-            youtube, part="snippet", videoId=VIDEO_ID, textFormat="plainText")
-
-        text_data = ''
-        for i, comment in enumerate(comments, 1):
-            text_data += f"{comment}"
-
-        final_comment = text_data.split('.')
-
-        # final_comment is a list of strings!
-        result = detailed_analysis(final_comment)
-        print(result)
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
-
-    else:
-        note = "Enter the video ID to be analysed!"
-        return render(request, 'realworld/ytanalysis.html', {'note': note})
-
 
 @register.filter(name='get_item')
 def get_item(dictionary, key):
