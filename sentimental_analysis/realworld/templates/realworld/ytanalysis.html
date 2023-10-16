@@ -79,10 +79,48 @@ padding: 16px;
       .github-link:hover {
         text-decoration: underline;
       }
+      body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hide scrollbars while loading */
+}
+
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background overlay */
+    z-index: 9999; /* Ensure it's on top of other elements */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.spinner {
+    border: 6px solid rgba(255, 255, 255, 0.3); /* Light border */
+    border-top: 6px solid #3498db; /* Blue top border */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
 
 </style>
 </head>
 <body>
+
+
+
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="home">Home</a>
@@ -98,7 +136,7 @@ padding: 16px;
     <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
 <br>
 <br>
-<form action = "{% url "youtube comments analysis" %}" method = "post" enctype="multipart/form-data">
+<form id="yt-analysis" action = "{% url "youtube comments analysis" %}" method = "post" enctype="multipart/form-data">
         {% csrf_token %}
     <label for = "ytid"></label>
     <div class="container" style="width: 100%;">
@@ -111,11 +149,13 @@ padding: 16px;
     <i><p style="color:red">*Please give the analyzer sometime to analyze*</p></i>
     <br>
     
-    <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
+    <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit" id="submit" onclick="startLoading()">Submit</button>
+    <div id="loadingSpinner" class="loading-spinner">
+      <div class="spinner"></div>
     </div>
-</form>
+    </div>
+  </form>
   </div>
-  
   <script>
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -128,6 +168,28 @@ padding: 16px;
     document.getElementById("main").style.marginLeft= "0";
     document.body.style.backgroundColor = "white";
   }
+
+  function startLoading() {
+    // Get the button and the loading spinner elements
+    const button = document.getElementById('submit');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+
+    // Toggle the "button--loading" class on the button
+    button.classList.toggle('button--loading');
+
+    // Show the loading spinner
+    loadingSpinner.style.display = 'block';
+
+    // Simulate a 5-second loading delay
+    setTimeout(function() {
+        // Hide the loading spinner
+        loadingSpinner.style.display = 'none';
+        // Remove the "button--loading" class to return the button to its original state
+        button.classList.remove('button--loading');
+    }, 51000); // 5 seconds in milliseconds
+}
+
+
   </script> 
 
 <div class="footer">
