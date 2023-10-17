@@ -1,115 +1,100 @@
-Mihir Nikam 
+CSC520 Fall 2023 Assignment 3
 
-Raleigh, NC 27606 | mvnikam@ncsu.edu | +1 (919) 395-4112  | linkedin.com/in/mihir-nikam/ 
+Due October 12th at 11:59pm
 
-EDUCATION 
-Master of Computer Science, North Carolina State University, Raleigh, USA                                                Expected: May 2025 
-Coursework: Design and Analysis of Algorithms, Software Engineering, Object-Oriented Design & Development 
- 
-Bachelor of Technology (Information Technology), Mumbai University, India (GPA 9.46/10)                  Aug 2019 - May 2023  
-Coursework: Operating Systems, Database Management Systems, Computer Networks, Data Analysis, Natural Language 
-Processing, Artificial Intelligence, Machine Learning 
- 
-TECHNICAL SKILLS 
-Languages: Java, Python, JavaScript, C, SQL, HTML5, CSS, PHP 
-Databases: MySQL, MongoDB, PostgreSQL 
-Tools/Frameworks: Node, React, Django, Figma, Selenium, Spring Boot, Git, Microsoft Azure, Heroku, TensorFlow, NumPy 
- 
-PROFESSIONAL EXPERIENCE 
-Software Engineer Intern | Barclays, Pune, India          
+This assignment consists of three questions which involve written answers and code. In order to complete
+the assignment you must submit a written report in pdf form detailing your answers to the questions as well
+as your code. As discussed in class all work must be your own. You may not use third party libraries or
+example code to complete the assignment with the exception of csv file loaders. All reports must be clear
+and well written. All code must be clear, readable, and well-commented. Upload your report as a file called
+<unityid>-Assign3.pdf and your sourcecode in a zip called <unityid>-Assign3.zip.
 
-                                                                        Jun 2022 - Jul 2022 
+Question 1 First-Order Predicate Logic (10 points)
 
-●  Automated the Start of Week Database and User Interface checks using Selenium Web-driver and Spring Boot. 
-●  Directed a backend application in Java by adhering to the general syntax of the team that can be used across 17 other 
+Consider the following English sentences.
 
-applications for automating User Interface checks. 
+• All lions are animals.
+• The head of a lion is the head of an animal.
 
-●  Coded a Python script for rigorous SQL database integrity testing and anomaly detection. 
-●  Saved a total of 2000+ man-hours annually through automation. 
+1. (5 pts) Convert the sentences into first-order predicate logic. Be extremely careful about quantification;
+because not everything in the universe is an animal, or a lion, or a head, you will need both kinds of
+quantification. Use the following lexicon:
 
- 
-Co-founder and Chief Technology Officer | Growth Heads Digital, Pune, India                                   Aug 2020 - Mar 2023 
-●  Developed  and  delivered  cutting-edge  Machine  Learning  business  solutions  and  bespoke  websites to  global  clients 
+lion(X) X is a lion.
 
-utilizing technologies such as ReactJS, MySQL, PHP, Figma, Django, jQuery, Python, and cPanel. 
+animal(X) X is an animal.
 
-●  Oversaw a dynamic team of 40+ interns, built partnerships with 20+ clients, and successfully executed 25+ projects. 
-●  Gained recognition in esteemed global publications, like Business Standard, The Print, and Asian News International. 
- 
-Software Engineer Intern | Carrot Consultancy Pvt. Ltd., Mumbai, India                                               Jan 2022 - Jun 2022 
+head(H,X) H is the head of X.
 
-●  Engineered an interactive AI-assistant with Dialogflow, NodeJS, and Google Calendar APIs which streamlined doctor's 
+2. (5 pts) Following the steps on text book to convert the logic statements into CNF.
 
-appointment bookings, cancellations, and rescheduling via Named Entity Recognition. 
+3. (5 pts) Using resolution prove using FOPL resolution that the second of the original sentences follows
+from the first. Number your clauses, and indicate explicitly step-by-step what resolves together, under
+what substitution.
 
-●  Achieved a 33.33% reduction in appointment booking time and optimized the cost-efficiency by 80%. 
+Question 2 Problem Solving (70 pts)
 
- 
-Backend Developer Intern | Lokavidya Technologies, Mumbai, India                       
+You have been given a text file representing a basic knowledge base. Each line of the file represents a single
+statement in conjunctive normal form composed of individual variables, represented as lower-case letters,
+with basic punctuation and negations. Thus:
 
-                           Jul 2021 - Jan 2022 
+(a | -b | -c | d) & (c | q)
 
-●  Created a web-based video conferencing application for educational institutions using the MERN stack. 
-●  Instilled features like creating, deleting, and recording meetings leveraging the BigBlueButton and JITSI v2 APIs while 
+Is equivalent to:
 
-formulating a Single Sign On (SSO) system to log into multiple applications. 
+(a ∨ ¬b ∨ ¬c ∨ d) ∧ (c ∨ q)
 
-●  Migrated base code from GitLab to virtual machines on Microsoft Azure and managed the Domain Name System (DNS). 
+Your task in this assignment is to implement code that loads the specified knowledge base into memory,
+generating an internal representation of the prepositional logic, and then performs resolution theorem proving
+to solve a given query. Your code should be called as follows:
 
-ACADEMIC PROJECTS 
-Software Development - Alpheta (IMDB for NFTs) 
+python query.py <HEU> <QUERY> <KB> or java -jar query.jar <HEU> <QUERY> <KB>
 
-  Designed and developed a social application using the MERN stack, enabling users to synchronize their blockchain 
+1
 
-based wallets, showcase their NFT collections, and actively engage in discussions, reviews, and ratings of NFTs. 
+where <HEU> is either BRUTE or TARGET and represents a heuristic used in search; <QUERY> is a CNF statement
+representing the rule we are seeking to prove true (e.g. "(-c | d)"); and <KB> is the knowledge base file we
+will use. You make make use of regular expression libraries and standard data structures for this task.
 
-  Pitched the project to a range of esteemed venture capitalist firms, including YCombinator and 100xVC, positioning 
+On execution your code must print out each intermediate step showing the combinations made. Once
+the execution is complete it will print out the result of the query (true or false) and it will print out the final
+state of the knowledge base.
 
- 
+As discussed in class resolution theorem proving can be done in a brute-force manner, where we combine
+all possible pairings until no new knowledge can be created. Or it can be done in a heuristically-guided
+manner where we sort the possible rule candidates by some factor such as holding the query variable or
+complexity. Your task in this assignment is to implement both a brute-force selection and one heuristic
+guide of your choice and then to use it when evaluating both the current KB and the one you define below.
 
- 
+For your final report you must:
 
-it as a compelling startup concept. 
+1. Define a set of test queries, that are compatible with this KB and the one you define below.
 
- 
-Machine Learning - EmoFy 
+2. Execute the queries with your knowledge bases and report on their relative performance under the two
 
-  Pioneered a custom-made machine learning model which proficiently detects human emotions and offer music 
+algorithms.
 
-recommendations based on the mood with accuracy on par with VGG16. 
+3. Evaluate the impact of your chosen heuristic and suggest potential improvements.
 
-  Employed libraries like OpenCV, TensorFlow, Keras, and NumPy and created the web app using Flask. 
+Question 3 Propositional Logic Problem (20 points)
 
- 
-Python Development - Foodversity (TOP 25 at HackinUTU Hackathon - 450+ teams) 
+Your task in this problem is to identify a new propositional logic problem suitable for use with your solver
+above. For this task you must define a novel problem that is suitable for propositional logic, define a
+knowledge base for it, and show how that KB will be used to address real-world queries. This must be an
+original problem and you may not copy it from published materials. For this question you will submit:
 
-  Built a B2B food management web app with Django and SQLite DB that routed excess food inventory from food 
+1. A brief description of your problem and how a knowledge-based agent built on it will be used in real
 
-businesses to non-profit organizations that cater to feeding the underprivileged. 
+applications.
 
- 
-Web Scraping and Data Analysis – Blog Sentiment Analysis 
+2. A KB covering at least 8 variables and 8 unique rules including 2 implications, represented in propo-
 
-  Harvested data from over 100 blogs systematically through BeautifulSoup, meticulously eliminating stop words, and 
- 
+sitional logic.
 
-then computed various metrics, including the Fog Index and Polarity Score, to enhance the website's SEO ranking. 
+3. A sample query with the steps for backward-chaining resolution.
 
-Artificial Intelligence - Connect-4 Engine 
+4. A representation of the KB suitable for use with your code above.
 
-  Created a Python application implementing the Minimax Algorithm and Alpha-Beta Pruning to emulate human-level 
-
-intelligence in the Connect-4 game for predicting optimal moves with the highest probability of winning. 
-
-LEADERSHIP ACTIVITIES AND AWARDS 
-
-●  Winner, Top-10 startups, Udyami: Received recognition for exceptional contributions and achievements. 
-●  Vice-Chairperson,  Computer  Society  of  India  (SPIT):  Cultivated  inter-college  relationships,  curated  workshops,  and 
-
-skillfully orchestrated a successful National Hackathon, drawing participation from over 650 individuals across India. 
-
-●  Captain, State Volleyball Team: Felicitated as the “Best Player” at the State Playoffs. 
-●  Board of Directors, Rotaract (SPIT): Volunteered for teaching English/Maths to children and led Beach Clean-up Drives. 
+2
 
 
