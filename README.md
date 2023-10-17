@@ -12,7 +12,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Codecov(https://img.shields.io/codecov/c/github.com/MuskKat/SE_Project1.svg)](https://img.shields.io/codecov/c/github.com/MuskKat/SE_Project1)
+![Codecov](https://img.shields.io/codecov/c/github/MuskKat/SE_Project1)
+
 
 ## INTRODUCTION
 
