@@ -76,8 +76,8 @@ We expect all community participants (contributors, paid or otherwise; sponsors;
 This code of conduct and its related procedures also applies to unacceptable behavior occurring outside the scope of community activities when such behavior has the potential to adversely affect the safety and well-being of community members.
 
 ## 10. Contact info
-
-
+Rucha Mahesh Kulkarni (rkulkar5@ncsu.edu)
+Muskan Katoch (mkatoch@ncsu.edu)
 
 ## 11. License and attribution
 
