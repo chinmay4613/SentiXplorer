@@ -18,18 +18,18 @@ Sentiment analysis is one of the fastest growing research areas in computer scie
 
 The complete development was achieved using the following technologies and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
 
-Python3
-Django
-HTML
-CSS
-Scrappy
+Python3 <br>
+Django <br>
+HTML<br>
+CSS<br>
+Scrappy<br>
 Vader Analysis Tool
 
 Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
 
 
 ## Steps for execution
-1. Run `pip install -r requirements.txt` followed by `python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"`. If there are any additional prerequisite modules that your PC system lacks, please run 'pip install <insert-module-name>'.
+1. Run `pip install -r requirements.txt` followed by `python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"`. If there are any additional prerequisite modules that your PC system lacks, please run `pip install "insert-module-name"`.
 2. Make sure you change the path accordingly in the files.  (Refer to the issue: https://github.com/bsharathramesh/SE_Project1/issues/31 to get the list of files where changes are needed)
 3. Execute manage.py using the command `python3 manage.py runserver` at `/SE_Project1/sentimental_analaysis`. This runs the Django server such that we can open the webUI for the project on the browser.
 4. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.

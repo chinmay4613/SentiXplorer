@@ -1,54 +1,54 @@
+se_project1 (https://github.com/mrpudlo/SE_Project1)
 
-<br clear=all>
-
-|What | Notes|score 0..4<br>(0=no, 2=ok, 4=wow!)|
-|-----|------|------|
-|Misc | Group members attended tutorial sessions|4|
-|Distrbuted dev model: | decisions made by unanmyous vote}|4|
-|| group meetings had a round robin speaking order|4|
-|| group meetings had a moderator that managed the round robin|4|
-|| group meeting moderator rotated among  the group|4|
-|| code conforms to some packaging standard|2|
-|| code has can be downloaded from some standard package manager|4|
-| |workload is spread over the whole team (one team member is often Xtimes more productive than the others... but nevertheless, here is a track record that everyone is contributing a lot)|4|
-|| Number of commits|4|
-|| Number of commits: by different people|4|
-|| Issues reports: there are many|4|
-||  issues are being  closed|4|
-|| License: exists|4|
-|| DOI badge: exists |4|
-||Docs: doco generated , format not ugly |4|
-||Docs: what: point descriptions of each class/function (in isolation) |4|
-||Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|4|
-||Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|4|
-||Docs: 3 minute video, posted to YouTube. That convinces people why they want to work on your code.|4|
-|| (hard) code conforms to some known patterns |2|
-|Tools Matter| Use of version control tools|4|
-|| Extensive use of version control tools |4|
-|| Repo has an up-to-date requirements.txt file|4|
-|| Repo does not have "ignore" files.|4|
-||Use of  style checkers |4|
-||Extensive Use of  style checkers |4|
-|| Use of code  formatters. |4|
-|| Extensive Use of code  formatters. |4|
-|| Use of syntax checkers. |4|
-|| Extensive use of syntax checkers. |4|
-|| Use of code coverage |4|
-|| Extensive use of code coverage |4|
-|| other automated analysis tools|4|
-|| Extensive use of  other automated analysis tools|4|
-|| test cases exist|4|
-|| test cases are routinely executed|2|
-| consensus-oriented model| the files CONTRIBUTING.md and CODEOFCONDUCT.md has have multiple edits by multiple people|4|
-| | the files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|4|
-| | multiple people contribute to discussions|4|
-|| issues are discussed before they are closed|4|
-|| Chat channel: exists|4|
-|| Chat channel: is active |4|
-|| test cases:.a large proportion of the issues related to handling failing cases.|2|
-| zero internal boundaries | evidence that the whole team is using the same tools: everyone can get to all tools and files|4|
-| | evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)|4|
-| | evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)|4|
-| | evidence that the members of the team are working across multiple places in the code base|4|
-| low-regressions rule | (hard to judge) features released are not subsequently removed|2|
-|short release cycles | (hard to see in short projects) project members are committing often enough so that everyone can get your work|4|
+| Ruberics                                                                                                                                                | Score | Evidence                                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Video                                                                                                                                                   | 3     | [https://www.youtube.com/watch?v=VLoJCemCdHg](https://www.youtube.com/watch?v=VLoJCemCdHg)                                                                         |
+| Workload is spread over the whole team (one team member is often Xtimes more productive than the others...                                              | 3     | [https://github.com/mrpudlo/SE_Project1/graphs/contributors](https://github.com/mrpudlo/SE_Project1/graphs/contributors)                                           |
+| Number of commits                                                                                                                                       | 3     | [https://github.com/mrpudlo/SE_Project1](https://github.com/mrpudlo/SE_Project1)                                                                                   |
+| Number of commits: by different people                                                                                                                  | 3     | [https://github.com/mrpudlo/SE_Project1/graphs/contributors](https://github.com/mrpudlo/SE_Project1/graphs/contributors)                                           |
+| Issues reports: there are many                                                                                                                          | 3     | [https://github.com/mrpudlo/SE_Project1/issues](https://github.com/mrpudlo/SE_Project1/issues)                                                                     |
+| Issues are being closed                                                                                                                                 | 3     | evidence in GH, issues are opened, assigned, resolved and closed                                                                                                   |
+| DOI badge: exists                                                                                                                                       | 3     | in GH                                                                                                                                                              |
+| Docs: doco generated, format not ugly                                                                                                                   | 3     | in GH                                                                                                                                                              |
+| Docs: what: point descriptions of each class/function (in isolation)                                                                                    | 2     | some of them have been explained but some are not explained                                                                                                        |
+| Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z                                                         | 1     |                                                                                                                                                                    |
+| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes theywant to rush out and use the thing                           | 2     | The project is interesting and well worked upon so it make the user want to try it out.                                                                            |
+| Docs: short video, animated, hosted on their repo. That convinces people why they want to work on their code.                                           | 3     | [https://www.youtube.com/watch?v=VLoJCemCdHg](https://www.youtube.com/watch?v=VLoJCemCdHg)                                                                         |
+| Use of version control tools                                                                                                                            | 3     | [https://github.com/mrpudlo/SE_Project1](https://github.com/mrpudlo/SE_Project1)                                                                                   |
+| Use of style checkers                                                                                                                                   | 3     | [https://github.com/mrpudlo/SE_Project1/blob/master/PROJ2-selfAssessment.md](https://github.com/mrpudlo/SE_Project1/blob/master/PROJ2-selfAssessment.md)           |
+| Use of code formatters.                                                                                                                                 | 3     | [https://github.com/mrpudlo/SE_Project1/blob/master/PROJ2-selfAssessment.md](https://github.com/mrpudlo/SE_Project1/blob/master/PROJ2-selfAssessment.md)           |
+| Use of syntax checkers.                                                                                                                                 | 3     | [https://github.com/mrpudlo/SE_Project1/blob/master/PROJ2-selfAssessment.md](https://github.com/mrpudlo/SE_Project1/blob/master/PROJ2-selfAssessment.md)           |
+| Use of code coverage                                                                                                                                    | 0     | no code coverage                                                                                                                                                   |
+| Other automated analysis tools                                                                                                                          | 3     | [https://github.com/mrpudlo/SE_Project1/blob/master/Software%20Documentation.pdf](https://github.com/mrpudlo/SE_Project1/blob/master/Software%20Documentation.pdf) |
+| Test cases exist                                                                                                                                        | 3     | dozens of tests and those test cases are more than 30% of the code base                                                                                            |
+| Test cases are routinely executed                                                                                                                       | 0     | no testcases                                                                                                                                                       |
+| The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up                                | 3     | [https://github.com/mrpudlo/SE_Project1/blob/master/CONTRIBUTING.md](https://github.com/mrpudlo/SE_Project1/blob/master/CONTRIBUTING.md)                           |
+| Issues are discussed before they are closed                                                                                                             | 3     | [https://github.com/mrpudlo/SE_Project1/issues](https://github.com/mrpudlo/SE_Project1/issues)                                                                     |
+| Chat channel: exists                                                                                                                                    | 0     | does not exists                                                                                                                                                    |
+| Test cases: a large proportion of the issues related to handling failing cases.                                                                         | 0     | no test cases                                                                                                                                                      |
+| Evidence that the whole team is using the same tools: everyone can get to all tools and files                                                           | 3     | in GH                                                                                                                                                              |
+| Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)                               | 3     | [https://github.com/mrpudlo/SE_Project1/graphs/contributors](https://github.com/mrpudlo/SE_Project1/graphs/contributors)                                           |
+| Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer) | 3     |                                                                                                                                                                    |
+| Evidence that the members of the team are working across multiple places in the code base                                                               | 2     | Contributors can be seen contributing to different parts of the project.                                                                                           |
+| Short release cycles                                                                                                                                    | 1     | (hard to see in short projects) project members are committing often enough so that everyone can get their work                                                    |
+| Does their website and documentation provide a clear, high-level overview of their software?                                                            | 2     | Documentation is scarse, but potent.                                                                                                                               |
+| Does their website and documentation clearly describe the type of user who should use their software?                                                   | yes   | [https://github.com/mrpudlo/SE_Project1/blob/master/Software%20Documentation.pdf](https://github.com/mrpudlo/SE_Project1/blob/master/Software%20Documentation.pdf) |
+| Do theypublish case studies to show how their software has been used by theirself and others?                                                           | yes   | Case studies are included in the ReadMe Documentation                                                                                                              |
+| Is the name of their project/software unique?                                                                                                           | No    | NA                                                                                                                                                                 |
+| Is their project/software name free from trademark violations?                                                                                          | No    |                                                                                                                                                                    |
+| Is their software available for free?                                                                                                                   | Yes   | Present in GH repository                                                                                                                                           |
+| Is their source code publicly available to download, either as a downloadable bundle or via access to a source code repository?                         | Yes   | [https://github.com/mrpudlo/SE_Project1](https://github.com/mrpudlo/SE_Project1)                                                                                   |
+| Is their documentation clearly available on their website or within their software?                                                                     | Yes   | In GH                                                                                                                                                              |
+| Does their documentation include a "quick start" guide, that provides a short overview of how to use their software with some basic examples of use?    | Yes   | [https://github.com/mrpudlo/SE_Project1/blob/master/Software%20Documentation.pdf](https://github.com/mrpudlo/SE_Project1/blob/master/Software%20Documentation.pdf) |
+| If theyprovide more extensive documentation, does this provide clear, step-by-step instructions on how to deploy and use their software?                | Yes   | In GH                                                                                                                                                              |
+| Do theyprovide a comprehensive guide to all their software’s commands, functions and options?                                                           | Yes   | [https://github.com/mrpudlo/SE_Project1#readme](https://github.com/mrpudlo/SE_Project1#readme)                                                                     |
+| Do theyprovide troubleshooting information that describes the symptoms and step-by-step solutions for problems and error messages?                      | No    | Not Found                                                                                                                                                          |
+| If their software can be used as a library, package or service by other software, do theyprovide comprehensive API documentation?                       | No    | No descriptive API Documentation found.                                                                                                                            |
+| If their software can be used as a library, package or service by other software, do theyprovide comprehensive API documentation?                       | No    | No descriptive API Documentation found.                                                                                                                            |
+| Do theypublish their release history e.g. release data, version numbers, key features of each release etc. on their web site or in their documentation? | No    | NA                                                                                                                                                                 |
+| Does their software describe how a user can get help with using their software?                                                                         | Yes   | In ReadMe                                                                                                                                                          |
+| Does their website and documentation describe what support, if any, theyprovide to users and developers?                                                | No    | No contextual documentation found                                                                                                                                  |
+| Does their project have an e-mail address or forum that is solely for supporting users?                                                                 | No    | NA                                                                                                                                                                 |
+| Are e-mails to their support e-mail address received by more than one person?                                                                           | No    | No support E-mail Found                                                                                                                                            |
+| Does their project have a ticketing system to manage bug reports and feature requests?                                                                  | Yes   | In GH                                                                                                                                                              |
+| Is their project's ticketing system publicly visible to their users, so they can view bug reports and feature requests?                                 | Yes   | In GH                                                                                                                                                              |
