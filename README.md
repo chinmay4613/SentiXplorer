@@ -6,7 +6,7 @@
 
 [![Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://youtu.be/VLoJCemCdHg)
 
-[![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
+[![DOI](https://zenodo.org/badge/703204680.svg)](https://zenodo.org/doi/10.5281/zenodo.10015848)
 
 [![Build Status](https://travis-ci.org/bsharathramesh/SE_Project1.svg?branch=master)](https://travis-ci.org/bsharathramesh/SE_Project1)
 
