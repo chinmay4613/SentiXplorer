@@ -259,7 +259,7 @@ def ytanalysis(request):
 
             return render(request, 'realworld/sentiment_graph.html', {"sentiment": result, "current_user": request.user})
         except:
-            return render(request, 'realworld/error.html')
+            return render(request, 'realworld/error.html', {"current_user": request.user})
     else:
         note = "Enter the video ID to be analysed!"
         return render(request, 'realworld/ytanalysis.html', {'note': note, "current_user": request.user})
