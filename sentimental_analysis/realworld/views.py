@@ -20,6 +20,10 @@ from django.contrib.auth.models import User
 from .models import Analysis
 from .signup import SignUpForm
 
+@register.filter(name='get_item')
+def get_item(dictionary, key):
+    return dictionary.get(key, 0)
+
 def index(request):
     print()
     if request.user.is_authenticated:
@@ -81,8 +85,8 @@ def pdfparser(data):
     return final_comment
 
 
-# def analysis(request):
-#     return render(request, 'realworld/index.html')
+def analysis(request):
+    return render(request, 'realworld/index.html')
 
 
 def get_clean_text(text):
@@ -302,4 +306,6 @@ def sentiment_analyzer_scores(sentence):
     score = analyser.polarity_scores(sentence)
     # print("{:-<40} {}".format(sentence, str(score)))
     return score
+
+
 
