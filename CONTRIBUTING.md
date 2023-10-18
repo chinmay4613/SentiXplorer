@@ -1,6 +1,6 @@
-# Contributing to SENG20-G19 SE_Project1
+# Contributing to SENG20-G19-G22 SE_Project1
 
-Follow the set of guidelines below to contribute to SENG20-G19 SE_Project1!
+Follow the set of guidelines below to contribute to SENG20-G19-G22 SE_Project1!
 
 ## Code of Conduct
 
@@ -9,14 +9,14 @@ By participating, you are expected to uphold this code. Please report unacceptab
 Prerequistes required before starting this project
 
 1. Must be a graduate student at NC State University
-2. Must be a student in Software Engineering Course in Fall 2020
+2. Must be a student in Software Engineering Course in Fall 2023
 3. Have proficiency in Python and Django
 
 ## How can I Contribute -
  
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for SENG20-G19 SE_Project1. 
+This section guides you through submitting a bug report for SENG20-G19-G22 SE_Project1. 
 Following these guidelines helps maintainers and the community understand your report, reproduce the behavior and find related reports.
 
 Before Submitting A Bug Report
