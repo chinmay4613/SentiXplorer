@@ -25,6 +25,31 @@ transition: 0.5s;
 padding-top: 60px;
 }
 
+.footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .copyright {
+        display: inline;
+      }
+      .github-link {
+        display: inline;
+        color: #4caf50;
+        text-decoration: none;
+      }
+
+      .github-link:hover {
+        text-decoration: underline;
+      }
+
+
 .sidenav a {
 padding: 8px 8px 32px 32px;
 text-decoration: none;
@@ -55,31 +80,6 @@ padding: 16px;
 .sidenav {padding-top: 15px;}
 .sidenav a {font-size: 18px;}
 }
-
-.footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-      }
-
-      .copyright {
-        display: inline;
-      }
-      .github-link {
-        display: inline;
-        color: #4caf50;
-        text-decoration: none;
-      }
-
-      .github-link:hover {
-        text-decoration: underline;
-      }
-
 </style>
 </head>
 <body>
@@ -94,23 +94,16 @@ padding: 16px;
   </div>
   
   <div id="main">
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Text Analysis</span>
-    <h1 style="margin: auto; text-align: center; font-family: Ranchers;">{{ note }}</h1>
-<br>
-<br>
-<form action = "{% url "text analysis" %}" method = "post" enctype="multipart/form-data">
-        {% csrf_token %}
-    <label for = "Text"></label>
-    <div class="container" style="width: 100%;">
-    <textarea class="form-control form-control-lg" type="textarea" name="Text" rows = "10" cols="50" >
-    </textarea>
-    <br>
-    <br>
-    <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
-    </div>
-</form>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; ERROR</span>
+    
   </div>
-  
+  <div style="margin-left: 20%; font-size: 24px">
+    <br>
+  <p>Please check your input, seems like you have entered something wrong.</p>
+  <br>
+    <p>Thanks!!</p>
+  <img height="500px" width="500px" src="../../media/error.jpeg" style="margin-left: 20%;">
+</div>
   <script>
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -124,12 +117,19 @@ padding: 16px;
     document.body.style.backgroundColor = "white";
   }
   </script> 
-<div class="footer">
-  <div class="copyright">
-      &copy; All Rights Reserved
-  </div>
-  <a class="github-link" href="https://github.com/MuskKat/SE_Project1" target="_blank">GitHub</a>
+      <br />
+      <br />
+      <br />
+      <br />
+
+  <div class="footer">
+    <div class="copyright">
+        &copy; All Rights Reserved
+    </div>
+    
+    <a class="github-link" href="https://github.com/MuskKat/SE_Project1" target="_blank">GitHub</a>
 </div>
+
 
 </body>
 </html>

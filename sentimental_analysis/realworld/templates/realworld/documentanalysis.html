@@ -1,0 +1,18 @@
+{% extends 'realworld/base.html' %} 
+{% load static %}
+
+{% block content%}
+<div class="container">
+    <h3 class="mt-5 mb-5" style="text-align: center;">Document Analyser</h3>
+    <p>{{ note }}</p>
+    <form action="{% url 'input' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="container">
+          <input class="form-control form-control-lg" type="file" name="document" />
+          <br />
+          <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

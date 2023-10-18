@@ -2,11 +2,48 @@
 <html lang="en">
 
 <head>
+    {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
     <title>Sentiment Analysis</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <style>
+
+.footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .copyright {
+        display: inline;
+      }
+      .github-link {
+        display: inline;
+        color: #4caf50;
+        text-decoration: none;
+      }
+
+      .github-link:hover {
+        text-decoration: underline;
+      }
+
+    </style>
 </head>
 
 <body>
 <div class=""></div>
+<div class="footer">
+  <div class="copyright">
+      &copy; All Rights Reserved
+  </div>
+ 
+  <a class="github-link" href="https://github.com/MuskKat/SE_Project1" target="_blank">GitHub</a>
+</div>
 </body>

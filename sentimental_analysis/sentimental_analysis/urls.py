@@ -20,14 +20,20 @@ from django.urls import path, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',realworld.views.analysis,name='analysis'),
-    path('input',realworld.views.input, name='input'),
-    path('productanalysis',realworld.views.productanalysis, name='product analysis'),
-    path('textanalysis',realworld.views.textanalysis, name='text analysis'),
-    path('audioanalysis',realworld.views.audioanalysis, name='audio analysis')
+    path('', realworld.views.index, name='index'),
+    path('input/', realworld.views.input, name='input'),
+    path('productanalysis/', realworld.views.productanalysis,name='product analysis'),
+    path('textanalysis/', realworld.views.textanalysis, name='text analysis'),
+    path('audioanalysis/', realworld.views.audioanalysis, name='audio analysis'),
+    path('ytanalysis',realworld.views.ytanalysis, name='youtube comments analysis'),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('accounts/profile/', realworld.views.index1, name='index1'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='registration/logged_out.html', next_page=None), name='logout'),
+    path('register/', realworld.views.register, name='register'),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

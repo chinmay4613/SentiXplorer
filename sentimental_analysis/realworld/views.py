@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.core.files.storage import FileSystemStorage
 import sys
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -12,10 +12,50 @@ import os
 import json
 import speech_recognition as sr
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from googleapiclient.discovery import build
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from .models import Analysis
+from .signup import SignUpForm
+
+def index(request):
+    print()
+    if request.user.is_authenticated:
+        return render(request, "realworld/index.html", {"current_user": request.user})
+    else:
+        return render(request, "realworld/index.html")
+    
+def register(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username = username, password = password)
+            login(request, user)
+            return render(request, 'realworld/index.html')
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+def index1(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username = username, password = password)
+        login(request, user)
+        if request.user.is_authenticated:
+            context = {"current_user": request.user}
+            return render(request, 'realworld/index.html', context)
+        else: 
+            return render(request, 'realworld/index.html')        
+    else:
+        return render(request, "realworld/index.html")
 
 def pdfparser(data):
-
-
     fp = open(data, 'rb')
     rsrcmgr = PDFResourceManager()
     retstr = StringIO()
@@ -25,23 +65,25 @@ def pdfparser(data):
 
     for page in PDFPage.get_pages(fp):
         interpreter.process_page(page)
-        data =  retstr.getvalue()
+        data = retstr.getvalue()
 
     text_file = open("Output.txt", "w", encoding="utf-8")
     text_file.write(data)
 
-    text_file = open("Output.txt",'r', encoding="utf-8")
+    text_file = open("Output.txt", 'r', encoding="utf-8")
     a = ""
     for x in text_file:
-            if len(x)>2:
-                b = x.split()
-                for i in b:
-                    a+=" "+i
+        if len(x) > 2:
+            b = x.split()
+            for i in b:
+                a += " "+i
     final_comment = a.split('.')
     return final_comment
 
-def analysis(request):
-    return render(request,'realworld/index.html')
+
+# def analysis(request):
+#     return render(request, 'realworld/index.html')
+
 
 def get_clean_text(text):
     text = removeLinks(text)
@@ -50,19 +92,20 @@ def get_clean_text(text):
     text = stripPunctuations(text)
     text = stripExtraWhiteSpaces(text)
 
-    #Tokenize using nltk
+    # Tokenize using nltk
     tokens = nltk.word_tokenize(text)
 
-    #Import stopwords
+    # Import stopwords
     stop_words = set(stopwords.words('english'))
     stop_words.add('rt')
     stop_words.add('')
-    
-    #Remove tokens which are in stop_words
+
+    # Remove tokens which are in stop_words
     newtokens = [item for item in tokens if item not in stop_words]
 
     textclean = ' '.join(newtokens)
     return textclean
+
 
 def detailed_analysis(result):
     result_dict = {}
@@ -72,29 +115,26 @@ def detailed_analysis(result):
     total_count = len(result)
 
     for item in result:
-        print(item)
         cleantext = get_clean_text(str(item))
-        print(cleantext)
         sentiment = sentiment_scores(cleantext)
-        print(sentiment)
         compound_score = sentiment['compound']
 
         pos_count += sentiment['pos']
         neu_count += sentiment['neu']
         neg_count += sentiment['neg']
-    
+
     total = pos_count + neu_count + neg_count
     result_dict['pos'] = (pos_count/total)
     result_dict['neu'] = (neu_count/total)
     result_dict['neg'] = (neg_count/total)
-
     return result_dict
 
+@login_required(login_url="/login")
 def input(request):
-    if request.method=='POST':
+    if request.method == 'POST':
         file = request.FILES['document']
         fs = FileSystemStorage()
-        fs.save(file.name,file)
+        fs.save(file.name, file)
         pathname = "media/"
         extension_name = file.name
         extension_name = extension_name[len(extension_name)-3:]
@@ -113,7 +153,7 @@ def input(request):
                         a += " " + i
             final_comment = a.split('.')
             result = detailed_analysis(final_comment)
-        elif extension_name=='wav':
+        elif extension_name == 'wav':
             r = sr.Recognizer()
             with sr.AudioFile(path) as source:
                 # listen for the data (load audio to memory)
@@ -123,12 +163,14 @@ def input(request):
                 value = text.split('.')
                 result = detailed_analysis(value)
         # Sentiment Analysis
-        os.system('cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
+        os.system(
+            'cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result, "current_user": request.user})
     else:
         note = "Please Enter the Document you want to analyze"
-        return render(request, 'realworld/home.html', {'note': note})
+        return render(request, 'realworld/documentanalysis.html', {'note': note, "current_user": request.user})
 
+@login_required(login_url="/login")
 def productanalysis(request):
     if request.method == 'POST':
         blogname = request.POST.get("blogname", "")
@@ -149,14 +191,15 @@ def productanalysis(request):
         # final_comment is a list of strings!
         result = detailed_analysis(final_comment)
         print(result)
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
+        return render(request, 'realworld/sentiment_graph.html', {"sentiment": result, "current_user": request.user})
 
     else:
         note = "Please Enter the product blog link for analysis"
-        return render(request, 'realworld/productanalysis.html', {'note': note})
+        return render(request, 'realworld/productanalysis.html', {"note": note, "current_user": request.user})
 
 # Custom template filter to retrieve a dictionary value by key.
 
+@login_required(login_url="/login")
 def textanalysis(request):
     if request.method == 'POST':
         text_data = request.POST.get("Text", "")
@@ -165,16 +208,64 @@ def textanalysis(request):
         # final_comment is a list of strings!
         result = detailed_analysis(final_comment)
         print(result)
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result, "current_user": request.user})
     else:
         note = "Enter the Text to be analysed!"
-        return render(request, 'realworld/textanalysis.html', {'note': note})
+        return render(request, 'realworld/textanalysis.html', {'note': note, "current_user": request.user})
 
+def get_video_comments(youtube, **kwargs):
+    comments = []
+    results = youtube.commentThreads().list(**kwargs).execute()
+
+    while results:
+        for item in results["items"]:
+            comment = item["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
+            comments.append(comment)
+
+        # Check if there are more comments
+        if "nextPageToken" in results:
+            kwargs["pageToken"] = results["nextPageToken"]
+            results = youtube.commentThreads().list(**kwargs).execute()
+        else:
+            break
+
+    return comments
+
+@login_required(login_url="/login")
+def ytanalysis(request):
+    if request.method == 'POST':
+        ytid = request.POST.get("ytid", "")
+        API_KEY = "AIzaSyAMkKPItHCg6LbG2WUu1aNX0SJQ57tdUFU"  # Replace with your API key or set up OAuth through GCP
+        VIDEO_ID = ytid  # Replace with the YouTube video ID
+        
+        youtube = build("youtube", "v3", developerKey=API_KEY)
+        # Get comments for a specific video
+        try:
+            comments = get_video_comments(youtube, part="snippet", videoId=VIDEO_ID, textFormat="plainText")
+            print(comments)
+            text_data = ''
+            for i, comment in enumerate(comments, 1):
+                text_data+=f"{comment}"
+
+            final_comment = text_data.split('.')
+
+            # final_comment is a list of strings!
+            result = detailed_analysis(final_comment)
+            print(result)
+
+            return render(request, 'realworld/sentiment_graph.html', {"sentiment": result, "current_user": request.user})
+        except:
+            return render(request, 'realworld/error.html')
+    else:
+        note = "Enter the video ID to be analysed!"
+        return render(request, 'realworld/ytanalysis.html', {'note': note, "current_user": request.user})
+
+@login_required(login_url="/login")
 def audioanalysis(request):
     if request.method == 'POST':
         file = request.FILES['document']
         fs = FileSystemStorage()
-        fs.save(file.name,file)
+        fs.save(file.name, file)
         pathname = "media/"
         extension_name = file.name
         extension_name = extension_name[len(extension_name)-3:]
@@ -186,11 +277,12 @@ def audioanalysis(request):
         print("Result")
         print(result)
         # Sentiment Analysis
-        os.system('cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
-        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
+        os.system(
+            'cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result, "current_user": request.user})
     else:
         note = "Please Enter the audio file you want to analyze"
-        return render(request, 'realworld/audio.html', {'note': note})
+        return render(request, 'realworld/audio.html', {'note': note, "current_user": request.user})
 
 def speech_to_text(filename):
     r = sr.Recognizer()
@@ -211,9 +303,3 @@ def sentiment_analyzer_scores(sentence):
     # print("{:-<40} {}".format(sentence, str(score)))
     return score
 
-
-
-
-@register.filter(name='get_item')
-def get_item(dictionary, key):
-    return dictionary.get(key, 0)
