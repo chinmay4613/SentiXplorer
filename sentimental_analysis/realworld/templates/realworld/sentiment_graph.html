@@ -1,5 +1,4 @@
-<!DOCTYPE HTML>
-<html>
+{% extends 'realworld/base.html' %} 
 {% load static %}
  <!-- Compiled and minified CSS -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -7,186 +6,93 @@
     <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-  body {
-  font-family: "Lato", sans-serif;
-  transition: background-color .5s;
-  }
-  
-  .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  }
-  
-  .sidenav a {
-  padding: 8px 8px 32px 32px;
-  text-decoration: none;
-  font-size: 23px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-  color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-  }
-  
-  #main {
-  transition: margin-left .5s;
-  padding: 16px;
-  }
-  
-  @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-  }
-
-  .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-      }
-
-      .copyright {
-        display: inline;
-      }
-      .github-link {
-        display: inline;
-        color: #4caf50;
-        text-decoration: none;
-      }
-
-      .github-link:hover {
-        text-decoration: underline;
-      }
-
-  </style>
-
-<script type="text/javascript">
-window.onload = function () {
-    CanvasJS.addColorSet("piechartColors",
-                [//colorSet Array 
-                "#2F4F4F",   
-                "#b5190b",
-                "#b39032"       
-                ]);
-	var chart = new CanvasJS.Chart("chartContainer",
-	{
-        colorSet: "piechartColors",
-		title:{
-			text: "Sentiment Distribution"
-		},
-		legend: {
-			itemWidth: 300,
-            itemHeight: 200,
-            horizontalAlign: "left",
-            verticalAlign :"center"
-		},
-		data: [
-		{
-			type: "pie",
-			showInLegend: true,
-            explodeOnClick: true,
-            toolTipContent: "{y} %",
-			legendText: "{indexLabel}",
-			dataPoints: [
-				{ y: {{sentiment | get_item:'pos'}} * 100, indexLabel: "Positive" },
-				{ y: {{sentiment | get_item:'neg'}} * 100, indexLabel: "Negative" },
-				{ y: {{sentiment | get_item:'neu'}} * 100, indexLabel: "Neutral" }
-			]
-		}
-		]
-	});
-	var chart2 = new CanvasJS.Chart("chartContainer2",{
-    title :{
-      text: "Sentimental Graph"
-    },
-    data: [{
-	    type: "column",
-	        explodeOnClick: true,
-            toolTipContent: "{y} %",
-			dataPoints: [
-				{label: "Positive" , y: {{sentiment | get_item:'pos'}} * 100},
-				{label: "Negative", y: {{sentiment | get_item:'neg'}} * 100 },
-				{label: "Neutral" , y: {{sentiment | get_item:'neu'}} * 100  }
-			]
-    }]
-});
-	chart.render();
-	chart2.render();
-}
-</script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-</head>
-  <body data-home-page="Page-1.html" data-home-page-title="Page 1" class="u-body"><header class="u-align-center-sm u-align-center-xs u-clearfix u-gradient u-header u-header" id="sec-0ea5"><div class="u-clearfix u-sheet u-sheet-1">
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="home">Home</a>
-      <a href="audioanalysis">Audio Analysis</a>
-      <a href="ytanalysis">Comments Analysis</a>
-      <a href="input">Document Analysis</a>
-      <a href="productanalysis">Product Analysis</a>
-      <a href="textanalysis">Text Analysis</a>
-    </div>
-    
-    <div id="main">
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Result</span>
-
+{% block content%}
+<div class="container">
+    <div class="container" style="width: 100%;">
+      <h5>Result</h5>
       <main role="main">
         <div id="chartContainer" style="height: 600px; width: 70%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
         <div id="chartContainer2" style="height: 600px; width: 70%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+      </main>
+      </div>
     </div>
-    
-    <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
-    
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft= "0";
-      document.body.style.backgroundColor = "white";
-    }
-    </script> 
-    <br />
-    <br />
-    <br />
-    <br />
-<div class="footer">
-  <div class="copyright">
-      &copy; All Rights Reserved
-  </div>
-  
-  <a class="github-link" href="https://github.com/MuskKat/SE_Project1" target="_blank">GitHub</a>
 </div>
-</body>
-</html>
+<script type="text/javascript">
+  window.onload = function () {
+      CanvasJS.addColorSet("piechartColors",
+                  [//colorSet Array 
+                  "#2F4F4F",   
+                  "#b5190b",
+                  "#b39032"       
+                  ]);
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+          colorSet: "piechartColors",
+      title:{
+        text: "Sentiment Distribution"
+      },
+      legend: {
+        itemWidth: 300,
+              itemHeight: 200,
+              horizontalAlign: "left",
+              verticalAlign :"center"
+      },
+      data: [
+      {
+        type: "pie",
+        showInLegend: true,
+              explodeOnClick: true,
+              toolTipContent: "{y} %",
+        legendText: "{indexLabel}",
+        dataPoints: [
+          { y: {{sentiment | get_item:'pos'}} * 100, indexLabel: "Positive" },
+          { y: {{sentiment | get_item:'neg'}} * 100, indexLabel: "Negative" },
+          { y: {{sentiment | get_item:'neu'}} * 100, indexLabel: "Neutral" }
+        ]
+      }
+      ]
+    });
+    var chart2 = new CanvasJS.Chart("chartContainer2",{
+      title :{
+        text: "Sentimental Graph"
+      },
+      data: [{
+        type: "column",
+            explodeOnClick: true,
+              toolTipContent: "{y} %",
+        dataPoints: [
+          {label: "Positive" , y: {{sentiment | get_item:'pos'}} * 100},
+          {label: "Negative", y: {{sentiment | get_item:'neg'}} * 100 },
+          {label: "Neutral" , y: {{sentiment | get_item:'neu'}} * 100  }
+        ]
+      }]
+  });
+    chart.render();
+    chart2.render();
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+  function startLoading() {
+    // Get the button and the loading spinner elements
+    const button = document.getElementById('submit');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+
+    // Toggle the "button--loading" class on the button
+    button.classList.toggle('button--loading');
+
+    // Show the loading spinner
+    loadingSpinner.style.display = 'block';
+
+    // Simulate a 5-second loading delay
+    setTimeout(function() {
+        // Hide the loading spinner
+        loadingSpinner.style.display = 'none';
+        // Remove the "button--loading" class to return the button to its original state
+        button.classList.remove('button--loading');
+    }, 51000); // 5 seconds in milliseconds
+  }
+</script> 
+{% endblock %}
