@@ -4,7 +4,7 @@
 
 ### YouTube Link: 
 
-![Video](https://www.youtube.com/watch?v=bRi_v8ERdq4&ab_channel=rushilpatel)
+[Video link](https://www.youtube.com/watch?v=bRi_v8ERdq4&ab_channel=rushilpatel)
 
 [![DOI](https://zenodo.org/badge/703204680.svg)](https://zenodo.org/doi/10.5281/zenodo.10015848)
 
