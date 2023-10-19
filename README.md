@@ -38,24 +38,31 @@ Although we have used HTML and CSS for the FrontEnd, the users can merge the bac
 4. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.
 5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
 
-![First](https://user-images.githubusercontent.com/43075652/97276268-31ce6100-17f4-11eb-8b57-7741069bf311.png)
-![second](https://user-images.githubusercontent.com/43075652/97276507-82de5500-17f4-11eb-88e0-0ea41bc9b424.png)
+When you first run the files, you are asked to log in or register yourself.
+![First](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/user_login_page.png)
+![orthen](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/user_signup_page.png)
 
-The UI for URL input is as shown below:
-![product](https://user-images.githubusercontent.com/43075652/97276542-925d9e00-17f4-11eb-910f-103be084ad13.png)
+After logging in, here's the landing page of the Sentiment Analyzer.
+![second](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/user_homepage.png)
 
-The UI for file input is as shown below:
-![docum](https://user-images.githubusercontent.com/43075652/97277008-2891c400-17f5-11eb-901a-1ebd3da5a32b.png)
+The UI for URL input for product analyzis is as shown below:
+![product](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/amazon_product_analysis.png)
 
-The UI for text input is as shown below:
-![text](https://user-images.githubusercontent.com/43075652/97277038-33e4ef80-17f5-11eb-8fbc-76bad26adcc9.png)
+The UI for file input for document analysis is as shown below:
+![docum](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/document_analysis.png)
 
-The UI for audio input is as shown below:
-![audio](https://user-images.githubusercontent.com/43075652/97277059-3d6e5780-17f5-11eb-8dcf-a5935d6613ae.png)
+The UI for text input for text analysis is as shown below:
+![text](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/text_analysis.png)
+
+The UI for audio input for audio analysis is as shown below:
+![audio](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/audio_analysis_page.png)
+
+The UI for URL input for comment analysis is as shown below:
+![ytanal](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/youtube_comments_analysis.png)
 
 The Output as below:
-![output](https://user-images.githubusercontent.com/43075652/97277225-74446d80-17f5-11eb-89f5-2b27c957827e.png)
-![out](https://user-images.githubusercontent.com/43075652/97277310-8e7e4b80-17f5-11eb-8910-03ec42ea0ff7.png)
+![output](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/analysis_bar_graph.png)
+![out](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/analysis_pie_chart.png)
 
 ## Case Study: Amazon Product Review Sentiment and Text Analysis
 
