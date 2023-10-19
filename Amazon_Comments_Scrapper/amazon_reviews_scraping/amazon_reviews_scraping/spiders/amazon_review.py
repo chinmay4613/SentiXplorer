@@ -13,8 +13,10 @@ class AmazonReviewsSpider(scrapy.Spider):
     # Domain names to scrape
     allowed_domains = ['amazon.com']
 
-    os.system("rm /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/reviews.json")
-    my_file_handle = open('/Users/sj941/Documents/GitHub/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt')
+    os.system(
+        "rm C:/Users/Rushil/Desktop/ncsu sem1/SE/New folder/SE_Project1/sentimental_analysis/reviews.json")
+    my_file_handle = open(
+        'C:/Users/Rushil/Desktop/ncsu sem1/SE/New folder/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt')
     myBaseUrl = my_file_handle.read()
     # myBaseUrl = "https://www.amazon.in/Apple-MacBook-Air-13-3-inch-MQD32HN/product-reviews/B073Q5R6VR/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&amp;amp;reviewerType=all_reviews&amp;amp;pageNumber="
     start_urls = []

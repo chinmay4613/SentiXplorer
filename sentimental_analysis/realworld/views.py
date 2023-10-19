@@ -20,9 +20,11 @@ from django.contrib.auth.models import User
 from .models import Analysis
 from .signup import SignUpForm
 
+
 @register.filter(name='get_item')
 def get_item(dictionary, key):
     return dictionary.get(key, 0)
+
 
 def index(request):
     print()
@@ -30,7 +32,8 @@ def index(request):
         return render(request, "realworld/index.html", {"current_user": request.user})
     else:
         return render(request, "realworld/index.html")
-    
+
+
 def register(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -38,26 +41,28 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
-            user = authenticate(username = username, password = password)
+            user = authenticate(username=username, password=password)
             login(request, user)
             return render(request, 'realworld/index.html')
     else:
         form = SignUpForm()
     return render(request, 'registration/register.html', {'form': form})
 
+
 def index1(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(username = username, password = password)
+        user = authenticate(username=username, password=password)
         login(request, user)
         if request.user.is_authenticated:
             context = {"current_user": request.user}
             return render(request, 'realworld/index.html', context)
-        else: 
-            return render(request, 'realworld/index.html')        
+        else:
+            return render(request, 'realworld/index.html')
     else:
         return render(request, "realworld/index.html")
+
 
 def pdfparser(data):
     fp = open(data, 'rb')
@@ -133,6 +138,7 @@ def detailed_analysis(result):
     result_dict['neg'] = (neg_count/total)
     return result_dict
 
+
 @login_required(login_url="/login")
 def input(request):
     if request.method == 'POST':
@@ -174,19 +180,20 @@ def input(request):
         note = "Please Enter the Document you want to analyze"
         return render(request, 'realworld/documentanalysis.html', {'note': note, "current_user": request.user})
 
+
 @login_required(login_url="/login")
 def productanalysis(request):
     if request.method == 'POST':
         blogname = request.POST.get("blogname", "")
         text_file = open(
-            "D:/NCSU/Sem 1/Software Engineering/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt",
+            "C:/Users/Rushil/Desktop/ncsu sem1/SE/New folder/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt",
             "w")
         text_file.write(blogname)
         text_file.close()
         os.system(
-            'scrapy runspider D:/NCSU/Sem 1/Software Engineering/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
+            'scrapy runspider C:/Users/Rushil/Desktop/ncsu sem1/SE/New folder/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
         final_comment = []
-        with open('D:/NCSU/Sem 1/Software Engineering/SE_Project1/sentimental_analysis/reviews.json') as json_file:
+        with open('C:/Users/Rushil/Desktop/ncsu sem1/SE/New folder/SE_Project1/sentimental_analysis/reviews.json') as json_file:
             data = json.load(json_file)
             for p in range(1, len(data) - 1):
                 a = data[p]['comment']
@@ -203,6 +210,7 @@ def productanalysis(request):
 
 # Custom template filter to retrieve a dictionary value by key.
 
+
 @login_required(login_url="/login")
 def textanalysis(request):
     if request.method == 'POST':
@@ -216,6 +224,7 @@ def textanalysis(request):
     else:
         note = "Enter the Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note, "current_user": request.user})
+
 
 def get_video_comments(youtube, **kwargs):
     comments = []
@@ -235,21 +244,24 @@ def get_video_comments(youtube, **kwargs):
 
     return comments
 
+
 @login_required(login_url="/login")
 def ytanalysis(request):
     if request.method == 'POST':
         ytid = request.POST.get("ytid", "")
-        API_KEY = "AIzaSyAMkKPItHCg6LbG2WUu1aNX0SJQ57tdUFU"  # Replace with your API key or set up OAuth through GCP
+        # Replace with your API key or set up OAuth through GCP
+        API_KEY = "AIzaSyAMkKPItHCg6LbG2WUu1aNX0SJQ57tdUFU"
         VIDEO_ID = ytid  # Replace with the YouTube video ID
-        
+
         youtube = build("youtube", "v3", developerKey=API_KEY)
         # Get comments for a specific video
         try:
-            comments = get_video_comments(youtube, part="snippet", videoId=VIDEO_ID, textFormat="plainText")
+            comments = get_video_comments(
+                youtube, part="snippet", videoId=VIDEO_ID, textFormat="plainText")
             print(comments)
             text_data = ''
             for i, comment in enumerate(comments, 1):
-                text_data+=f"{comment}"
+                text_data += f"{comment}"
 
             final_comment = text_data.split('.')
 
@@ -263,6 +275,7 @@ def ytanalysis(request):
     else:
         note = "Enter the video ID to be analysed!"
         return render(request, 'realworld/ytanalysis.html', {'note': note, "current_user": request.user})
+
 
 @login_required(login_url="/login")
 def audioanalysis(request):
@@ -288,6 +301,7 @@ def audioanalysis(request):
         note = "Please Enter the audio file you want to analyze"
         return render(request, 'realworld/audio.html', {'note': note, "current_user": request.user})
 
+
 def speech_to_text(filename):
     r = sr.Recognizer()
 
@@ -300,12 +314,10 @@ def speech_to_text(filename):
         print(text)
         return text
 
+
 def sentiment_analyzer_scores(sentence):
     analyser = SentimentIntensityAnalyzer()
     print("Scores analysed")
     score = analyser.polarity_scores(sentence)
     # print("{:-<40} {}".format(sentence, str(score)))
     return score
-
-
-
