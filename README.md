@@ -38,29 +38,37 @@ Although we have used HTML and CSS for the FrontEnd, the users can merge the bac
 4. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.
 5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
 
-When you first run the files, you are asked to log in or register yourself.
+When you first run the files, you are asked to log in or register yourself. 
+
 ![First](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/user_login_page.png)
 ![orthen](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/user_signup_page.png)
 
 After logging in, here's the landing page of the Sentiment Analyzer.
+
 ![second](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/user_homepage.png)
 
 The UI for URL input for product analyzis is as shown below:
+
 ![product](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/amazon_product_analysis.png)
 
 The UI for file input for document analysis is as shown below:
+
 ![docum](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/document_analysis.png)
 
 The UI for text input for text analysis is as shown below:
+
 ![text](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/text_analysis.png)
 
 The UI for audio input for audio analysis is as shown below:
+
 ![audio](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/audio_analysis_page.png)
 
 The UI for URL input for comment analysis is as shown below:
+
 ![ytanal](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/youtube_comments_analysis.png)
 
 The Output as below:
+
 ![output](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/analysis_bar_graph.png)
 ![out](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/analysis_pie_chart.png)
 
