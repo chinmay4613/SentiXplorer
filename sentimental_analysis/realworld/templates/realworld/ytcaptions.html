@@ -1,0 +1,52 @@
+{% extends 'realworld/base.html' %}
+{% load static%}
+
+{% block content%}
+<div class="container">
+    <h3 class="mt-5 mb-5" style="text-align: center;">Youtube Video Analyser</h3>
+    <p>{{ note }}</p>
+    <form id="yt-captions" action="{% url 'youtube captions analysis' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="ytid"></label>
+        <div class="container" style="width: 100%;">
+            <input class="form-control form-control-lg" type="input" name="ytid" rows="10" cols="50"></input>
+            <br>
+            <i>
+                <p style="color:red">For example, in the <b>URL:</b>
+                    https://www.youtube.com/watch?v=wU6udHRIkcc&ab_channel=AbdulBari, the <b>video ID</b> is
+                    wU6udHRIkcc.</p>
+            </i>
+            <br>
+            <i>
+                <p style="color:red">*Please give the analyzer sometime to analyze*</p>
+            </i>
+            <br>
+            <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;"
+                type="submit" id="submit" onclick="startLoading()">Submit</button>
+            <div id="loadingSpinner" class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    function startLoading() {
+        // Get the button and the loading spinner elements'
+        const button = document.getElementById('submit');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        // Toggle the "button--loading" class on the button
+        button.classList.toggle('button--loading');
+
+        // Show the loading spinner
+        loadingSpinner.style.display = 'block';
+
+        // Simulate a 5-second loading delay
+        setTimeout(function () {
+            // Hide the loading spinner
+            loadingSpinner.style.display = 'none';
+            // Remove the "button--loading" class to return the button to its original state
+            button.classList.remove('button--loading');
+        }, 51000); // 5 seconds in milliseconds
+    }
+</script>
+{% endblock %}
