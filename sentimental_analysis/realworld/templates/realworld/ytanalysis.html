@@ -1,21 +1,27 @@
-{% extends 'realworld/base.html' %} 
+{% extends 'realworld/base.html' %}
 {% load static%}
 
 {% block content%}
 <div class="container">
-  <h3 class="mt-5 mb-5" style="text-align: center;">Youtube Comment Analyser</h3>
+  <h3 class="mt-5 mb-5" style="text-align: center;">Youtube Comments Analyser</h3>
   <p>{{ note }}</p>
-  <form id="yt-analysis" action = "{% url "youtube comments analysis" %}" method = "post" enctype="multipart/form-data">
+  <form id="yt-analysis" action="{% url " youtube comments analysis" %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <label for = "ytid"></label>
+    <label for="ytid"></label>
     <div class="container" style="width: 100%;">
-      <input class="form-control form-control-lg" type="input" name="ytid" rows = "10" cols="50" ></input>
+      <input class="form-control form-control-lg" type="input" name="ytid" rows="10" cols="50"></input>
       <br>
-      <i><p style="color:red">For example, in the <b>URL:</b> https://www.youtube.com/watch?v=wU6udHRIkcc&ab_channel=AbdulBari, the <b>video ID</b> is wU6udHRIkcc.</p></i>
+      <i>
+        <p style="color:red">For example, in the <b>URL:</b>
+          https://www.youtube.com/watch?v=wU6udHRIkcc&ab_channel=AbdulBari, the <b>video ID</b> is wU6udHRIkcc.</p>
+      </i>
       <br>
-      <i><p style="color:red">*Please give the analyzer sometime to analyze*</p></i>
+      <i>
+        <p style="color:red">*Please give the analyzer sometime to analyze*</p>
+      </i>
       <br>
-      <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit" id="submit" onclick="startLoading()">Submit</button>
+      <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;"
+        type="submit" id="submit" onclick="startLoading()">Submit</button>
       <div id="loadingSpinner" class="loading-spinner">
         <div class="spinner"></div>
       </div>
@@ -35,12 +41,12 @@
     loadingSpinner.style.display = 'block';
 
     // Simulate a 5-second loading delay
-    setTimeout(function() {
-        // Hide the loading spinner
-        loadingSpinner.style.display = 'none';
-        // Remove the "button--loading" class to return the button to its original state
-        button.classList.remove('button--loading');
+    setTimeout(function () {
+      // Hide the loading spinner
+      loadingSpinner.style.display = 'none';
+      // Remove the "button--loading" class to return the button to its original state
+      button.classList.remove('button--loading');
     }, 51000); // 5 seconds in milliseconds
   }
-</script> 
+</script>
 {% endblock %}

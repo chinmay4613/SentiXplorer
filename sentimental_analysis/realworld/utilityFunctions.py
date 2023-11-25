@@ -27,6 +27,28 @@ def stripExtraWhiteSpaces(text):
 def removeSpecialChar(text):
     return re.sub(r'\W+ ', '', text)
 
+def detailed_analysis(result):
+    result_dict = {}
+    neg_count = 0
+    pos_count = 0
+    neu_count = 0
+    total_count = len(result)
+
+    for item in result:
+        cleantext = get_clean_text(str(item))
+        sentiment = sentiment_scores(cleantext)
+        compound_score = sentiment['compound']
+
+        pos_count += sentiment['pos']
+        neu_count += sentiment['neu']
+        neg_count += sentiment['neg']
+
+    total = pos_count + neu_count + neg_count
+    result_dict['pos'] = (pos_count / total)
+    result_dict['neu'] = (neu_count / total)
+    result_dict['neg'] = (neg_count / total)
+
+    return result_dict
 
 def sentiment_scores(sentence):
     # Create a SentimentIntensityAnalyzer object.
