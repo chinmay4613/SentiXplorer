@@ -5,7 +5,7 @@
 <div class="container">
   <h3 class="mt-5 mb-5" style="text-align: center;">Youtube Comments Analyser</h3>
   <p>{{ note }}</p>
-  <form id="yt-analysis" action="{% url " youtube comments analysis" %}" method="post" enctype="multipart/form-data">
+  <form id="yt-analysis" action="{% url 'youtube comments analysis' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <label for="ytid"></label>
     <div class="container" style="width: 100%;">
