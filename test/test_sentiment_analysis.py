@@ -3,8 +3,7 @@ sys.path.append("../sentimental_analysis/audio/")
 import unittest
 import audio_analyzer
 
-# Unit Test Case for Audio Sentiment Analyzer
-class AudioSentimentAnalyzerTestCase(unittest.TestCase):
+class sentimentAnalyzerTestCases(unittest.TestCase):
     
     # Setup
     def setup(self):
@@ -19,6 +18,17 @@ class AudioSentimentAnalyzerTestCase(unittest.TestCase):
     def test_sentiment_analyzer_scores(self):
         aa = audio_analyzer.AudioAnalyzer()
         self.assertEqual(aa.sentiment_analyzer_scores("hello how are you")["pos"], 0)
+        
+    def test_textanalysis_post(self, mock_detailed_analysis):
+        mock_detailed_analysis.return_value = {'pos': 0.6, 'neu': 0.2, 'neg': 0.2}
+
+        self.client.force_login(self.user)
+        data = {'Text': 'This is a test text.'}
+        response = self.client.post(reverse('textanalysis'), data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
+        mock_detailed_analysis.assert_called_once_with(['This is a test text.'])
 
 
 # main function
