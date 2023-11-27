@@ -24,6 +24,9 @@ from django.http import HttpResponse
 from googleapiclient.discovery import build
 from django.contrib.auth.decorators import login_required
 from .utilityFunctions import detailed_analysis
+import tweepy
+import requests
+import praw
 
 
 @register.filter(name='get_item')
@@ -256,6 +259,24 @@ def get_video_captions(video_id):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
+
+@login_required(login_url="/login")    
+def reddit_analysis(request):
+    if request.method == 'POST':
+        keyword = request.POST.get("keyword", "")
+        reddit_read_only = praw.Reddit(client_id="Mb8Sp8_PcTtqHYn-5rRKsw", client_secret="w1oGqM9jiEMD__RQCMpE6LcLnwYqoQ", user_agent="Ok-Huckleberry-8806") 
+        reddit_data = reddit_read_only.subreddit("all")
+        to_be_analysed = []
+        for post in reddit_data.search(keyword, limit=10):
+            to_be_analysed.append(post.title)
+        result = detailed_analysis(to_be_analysed)
+        print(result)
+        return render(request, 'realworld/sentiment_graph.html', {"sentiment": result, "current_user": request.user if request.user.is_authenticated else None})
+    else:
+        note = "Enter the reddit topic to be analyzed!"
+        return render(request, 'realworld/redditdataanalysis.html', {'note': note, "current_user": request.user})
+        
+        
 
 @login_required(login_url="/login")
 def ytcaptions(request):
