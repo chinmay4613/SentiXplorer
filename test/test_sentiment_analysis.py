@@ -73,6 +73,24 @@ class sentimentAnalyzerTestCases(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
         mock_detailed_analysis.assert_called_once()
+    
+    def test_index_authenticated(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+    
+    def test_index_not_authenticated(self):
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_register_post(self):
+        data = {
+            'username': 'newuser',
+            'password1': 'newpassword',
+            'password2': 'newpassword',
+        }
+        response = self.client.post(reverse('register'), data)
+        self.assertEqual(response.status_code, 200)
 
 # main function
 if __name__ == '__main__':
