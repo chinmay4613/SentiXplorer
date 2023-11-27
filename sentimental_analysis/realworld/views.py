@@ -151,6 +151,15 @@ def get_face_analysis():
     return result
 
 @login_required(login_url="/login")
+def faceAnalysis(request):
+    if request.method == 'POST':
+        result = get_face_analysis()
+        return render(request, 'realworld/face_analysis.html', {"result": result})
+    else:
+        result = get_face_analysis()
+        return render(request, 'realworld/face_analysis.html', {'result': result})
+
+@login_required(login_url="/login")
 def input(request):
     if request.method == 'POST':
         file = request.FILES['document']
