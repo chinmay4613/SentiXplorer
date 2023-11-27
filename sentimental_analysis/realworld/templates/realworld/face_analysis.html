@@ -1,0 +1,41 @@
+{% extends 'realworld/base.html' %}
+{% load static%}
+
+{% block content%}
+<div class="container">
+  <h3 class="mt-5 mb-5" style="text-align: center;">Face Analyser</h3>
+  <h5>Image Upload</h5>
+
+  <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="image">Choose an image:</label>
+      <input type="file" id="image" name="image" accept="image/*">
+      <br>
+      <input type="submit" value="Upload", id="upload">
+      <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+      </div>
+  </form>
+  
+</div>
+<script>
+  function startLoading() {
+    // Get the button and the loading spinner elements
+    const button = document.getElementById('upload');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+
+    // Toggle the "button--loading" class on the button
+    button.classList.toggle('button--loading');
+
+    // Show the loading spinner
+    loadingSpinner.style.display = 'block';
+
+    // Simulate a 5-second loading delay
+    setTimeout(function () {
+      // Hide the loading spinner
+      loadingSpinner.style.display = 'none';
+      // Remove the "button--loading" class to return the button to its original state
+      button.classList.remove('button--loading');
+    }, 51000); // 5 seconds in milliseconds
+  }
+</script>
+{% endblock %}

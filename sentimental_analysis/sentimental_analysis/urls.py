@@ -35,6 +35,7 @@ urlpatterns = [
     path('accounts/profile/', realworld.views.index1, name='index1'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logged_out.html', next_page=None), name='logout'),
     path('register/', realworld.views.register, name='register'),
+    path('faceAnalysis/', realworld.views.faceAnalysis, name='face_analysis'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
