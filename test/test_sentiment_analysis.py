@@ -62,6 +62,17 @@ class sentimentAnalyzerTestCases(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
         mock_detailed_analysis.assert_called_once()
+        
+    def test_ytanalysis_post(self, mock_detailed_analysis):
+        mock_detailed_analysis.return_value = {'pos': 0.5, 'neu': 0.3, 'neg': 0.2}
+
+        self.client.force_login(self.user)
+        data = {'ytid': 'abc123'}
+        response = self.client.post(reverse('ytanalysis'), data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
+        mock_detailed_analysis.assert_called_once()
 
 # main function
 if __name__ == '__main__':
