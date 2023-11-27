@@ -40,6 +40,17 @@ class sentimentAnalyzerTestCases(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
         mock_detailed_analysis.assert_called_once()
+    
+    def test_reddit_analysis_post(self, mock_detailed_analysis):
+        mock_detailed_analysis.return_value = {'pos': 0.5, 'neu': 0.3, 'neg': 0.2}
+
+        self.client.force_login(self.user)
+        data = {'keyword': 'python'}
+        response = self.client.post(reverse('reddit_analysis'), data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
+        mock_detailed_analysis.assert_called_once()
 
 
 # main function
