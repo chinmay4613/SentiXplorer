@@ -82,7 +82,7 @@ class sentimentAnalyzerTestCases(unittest.TestCase):
     def test_index_not_authenticated(self):
         response = self.client.get(reverse('index'))
         self.assertEqual(response.status_code, 200)
-        
+    #    
     def test_register_post(self):
         data = {
             'username': 'newuser',
