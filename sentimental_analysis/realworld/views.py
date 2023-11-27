@@ -144,6 +144,12 @@ def detailed_analysis(result):
     return result_dict
 
 
+def get_face_analysis():
+    # read image 
+    img = cv2.imread('/Users/dhruvkolhatkar/Documents/Screenshots/happy.png') 
+    result = DeepFace.analyze(img,actions = ['emotion']) 
+    return result
+
 @login_required(login_url="/login")
 def input(request):
     if request.method == 'POST':
