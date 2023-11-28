@@ -5,7 +5,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211804.svg)](https://zenodo.org/doi/10.5281/zenodo.10211804)
 [![GitHub Release](https://img.shields.io/github/release/chinmay4613/SentiXplorer)](https://github.com/chinmay4613/SentiXplorer/releases/tag/wolftrack)
-[![codecov](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0/graph/badge.svg?token=3OWJ1DERO5)](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0)
+[![codecov](https://codecov.io/gh/aniketdarp190301/SentiXplorer/graph/badge.svg?token=7WRRBBPK9J)](https://codecov.io/gh/aniketdarp190301/SentiXplorer)
 ![GitHub language count](https://img.shields.io/github/languages/count/chinmay4613/SentiXplorer)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/chinmay4613/SentiXplorer)](https://github.com/chinmay4613/SentiXplorer)
 [![GitHub-size](https://img.shields.io/github/languages/code-size/chinmay4613/SentiXplorer)](https://github.com/chinmay4613/SentiXplorer)
