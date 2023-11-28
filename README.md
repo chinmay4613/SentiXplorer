@@ -126,14 +126,15 @@ Extend the developed Youtube comment analysis to Facebook, Twitter and LinkedIn 
 Audio diarization to split input audio in sections according to different speakers, to analyse individual speaker sentiment.
 
 
-## Team Members
+## :handshake: Contributors
 
-Rucha Mahesh Kulkarni
-
-Muskan Katoch
-
-Mihir Nikam
-
-Rushil Patel
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/shreyavaidya2311">Shreya Vaidya</a></td>
+    <td align="center"><a href="https://github.com/Dhruv-Kolhatkar">Dhruv Kolhatkar</a></td>
+    <td align="center"><a href="https://github.com/aniketdarp190301">Aniket Darp</a></td>
+    <td align="center"><a href="https://github.com/chinmay4613">Chinmay Walinjkar</a></td>
+  </tr>
+</table>
 				
 
