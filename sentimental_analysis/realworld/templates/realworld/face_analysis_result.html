@@ -1,0 +1,104 @@
+{% extends 'realworld/base.html' %} 
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block content%}
+<div class="container">
+    <div class="container" style="width: 100%;">
+      <h5>Result</h5>
+      <main role="main">
+        <div id="chartContainer" style="height: 600px; width: 70%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+        <div id="chartContainer2" style="height: 600px; width: 70%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+      </main>
+      </div>
+    </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+      CanvasJS.addColorSet("piechartColors",
+                  [//colorSet Array 
+                  "#2F4F4F",   
+                  "#b5190b",
+                  "#b39032",
+                  "#000000",
+                  "#FFC0CB",
+                  "#FFFF00",
+                  "#00FFFF"
+                  ]);
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+          colorSet: "piechartColors",
+      title:{
+        text: "Sentiment Distribution"
+      },
+      legend: {
+        itemWidth: 300,
+              itemHeight: 200,
+              horizontalAlign: "left",
+              verticalAlign :"center"
+      },
+      data: [
+      {
+        type: "pie",
+        showInLegend: true,
+              explodeOnClick: true,
+              toolTipContent: "{y} %",
+        legendText: "{indexLabel}",
+        dataPoints: [
+          { y: {{sentiment | get_item:'anger'}} * 100, indexLabel: "Anger" },
+          { y: {{sentiment | get_item:'disgust'}} * 100, indexLabel: "Disgust" },
+          { y: {{sentiment | get_item:'fear'}} * 100, indexLabel: "Fear" },
+          { y: {{sentiment | get_item:'happy'}} * 100, indexLabel: "Happy" },
+          { y: {{sentiment | get_item:'sad'}} * 100, indexLabel: "Sad" },
+          { y: {{sentiment | get_item:'surprise'}} * 100, indexLabel: "Surprised" },
+          { y: {{sentiment | get_item:'neutral'}} * 100, indexLabel: "Neutral" }
+        ]
+      }
+      ]
+    });
+    var chart2 = new CanvasJS.Chart("chartContainer2",{
+      title :{
+        text: "Sentimental Graph"
+      },
+      data: [{
+        type: "column",
+            explodeOnClick: true,
+              toolTipContent: "{y} %",
+        dataPoints: [
+          {label: "Anger" , y: {{sentiment | get_item:'angry'}} * 100},
+          {label: "Disgust", y: {{sentiment | get_item:'disgust'}} * 100 },
+          {label: "Fear" , y: {{sentiment | get_item:'fear'}} * 100  },
+          {label: "Happy" , y: {{sentiment | get_item:'happy'}} * 100  },
+          {label: "Sad" , y: {{sentiment | get_item:'sad'}} * 100  },
+          {label: "Surprised" , y: {{sentiment | get_item:'surprise'}} * 100  },
+          {label: "Neutral" , y: {{sentiment | get_item:'neutral'}} * 100  }
+        ]
+      }]
+  });
+    chart.render();
+    chart2.render();
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+  function startLoading() {
+    // Get the button and the loading spinner elements
+    const button = document.getElementById('submit');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+
+    // Toggle the "button--loading" class on the button
+    button.classList.toggle('button--loading');
+
+    // Show the loading spinner
+    loadingSpinner.style.display = 'block';
+
+    // Simulate a 5-second loading delay
+    setTimeout(function() {
+        // Hide the loading spinner
+        loadingSpinner.style.display = 'none';
+        // Remove the "button--loading" class to return the button to its original state
+        button.classList.remove('button--loading');
+    }, 51000); // 5 seconds in milliseconds
+  }
+</script> 
+{% endblock %}
