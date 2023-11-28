@@ -1,34 +1,59 @@
-# SE Project 2- Group 22
+# SentiXplorer
+### *Insightful Analysis Beyond Words - Decode Emotions in Text, Audio, and More.*
 
-# C.E.L.T: The Sentimental Analyser 
+<img src="https://github.com/chinmay4613/SentiXplorer/assets/56782318/9738b301-2545-41a7-b97a-59b9eef35792" alt="logo" width="350px"></img>
 
-### YouTube Link: 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10023452.svg)](https://zenodo.org/doi/10.5281/zenodo.10023451)
+[![GitHub Release](https://img.shields.io/github/release/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0/releases/tag/wolftrack)
+[![Manual Build](https://github.com/aniketdarp190301/WolfTrack4.0/actions/workflows/main.yml/badge.svg)](https://github.com/aniketdarp190301/WolfTrack4.0/actions/workflows/main.yml)
+<!-- [![codecov](https://codecov.io/gh/nehajaideep/WolfTrack3.0/branch/Group10StableBranch/graph/badge.svg?token=0Q36G2YQC6)](https://codecov.io/gh/nehajaideep/WolfTrack3.0) -->
+[![codecov](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0/graph/badge.svg?token=3OWJ1DERO5)](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0)
+![GitHub language count](https://img.shields.io/github/languages/count/aniketdarp190301/WolfTrack4.0)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0)
+[![GitHub-size](https://img.shields.io/github/languages/code-size/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0)
+[![GitHub issues](https://img.shields.io/github/issues/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0)
+[![GitHub-closed-issues](https://img.shields.io/github/issues-closed-raw/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [Video link](https://www.youtube.com/watch?v=bRi_v8ERdq4&ab_channel=rushilpatel)
 
-[![DOI](https://zenodo.org/badge/703204680.svg)](https://zenodo.org/doi/10.5281/zenodo.10015848)
 
-[![Build Status](https://travis-ci.org/bsharathramesh/SE_Project1.svg?branch=master)](https://travis-ci.org/bsharathramesh/SE_Project1)
+## Introduction
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+In a world buzzing with digital conversations, deciphering the emotions hidden within text, audio, and various data sources is more critical than ever. Enter _SentiXplorer_ – your comprehensive solution for insightful analysis beyond words.
 
- [![codecov](https://codecov.io/gh/MuskKat/SE_Project1/branch/main/graph/badge.svg)](https://codecov.io/gh/MuskKat/SE_Project1)
+## Features
 
 
-## INTRODUCTION
+- **Document Analysis**:
+Unlock deep insights and sentiments buried in lengthy documents, enabling users to swiftly navigate and understand the overarching sentiment and opinions conveyed in comprehensive textual data.
 
-Sentiment analysis is one of the fastest growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project we aim to achieve our goal in accurately predicting a users sentiment by analysing the data provided in any of the five different methods. They are Document Analysis, Comment Analysis, Text Analysis, Product Analysis and Audio Analysis. This project though currently in the initial stages of development, can be further applied to numerous domains which can be useful for the society. This document provides a major perspective for the users to understand and take up the project as an Open source software and add on multiple features before releasing to the market. Also, the document aids the developers in understanding the code and acts as a reference point for starting the project.
+- **Text Analysis**:
+From social media posts to customer reviews, SentiXplorer offers a meticulous examination of textual sentiments, facilitating a nuanced understanding of public perception for informed decision-making.
 
-The complete development was achieved using the following technologies and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
+- **Facial Emotion Analysis**:
+Ideal for marketing and user experience studies, this feature provides actionable insights into how visual content resonates emotionally, offering a deeper understanding of audience engagement.
 
-Python3 <br>
-Django <br>
-HTML<br>
-CSS<br>
-Scrappy<br>
-Vader Analysis Tool
+- **Audio Analysis**:
+Enhance customer support strategies by evaluating call center interactions, uncover sentiments in podcasts or interviews, and gain insights from audio content that may hold significant emotional cues.
 
-Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
+- **Product Review Analysis**:
+Identify product strengths and weaknesses, respond promptly to customer concerns, and refine product offerings based on real-time feedback to enhance overall customer satisfaction.
+
+- **YouTube Comments Analysis**:
+Gain a deep understanding of viewer sentiments, address concerns expressed in comments, and refine content strategies based on real-time feedback from one of the largest video-sharing platforms.
+
+- **YouTube Video Analysis**:
+Evaluate the impact of video content, refine content strategies based on viewer sentiments, and stay attuned to the dynamic landscape of YouTube for strategic content planning and optimization.
+
+- **Reddit Topic Analysis**:
+Understand the pulse of online communities, identify emerging trends, and gauge public sentiment on diverse subjects through detailed analysis of Reddit discussions.
+
+
+## Tech Stack
+
+<img src="https://github.com/chinmay4613/SentiXplorer/assets/56782318/b10dc1b9-c947-46f5-90c6-b010f6e4bcb6" alt="logo" width="450px"></img>
+
 
 
 ## Steps for execution
