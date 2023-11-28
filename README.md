@@ -8,11 +8,9 @@
 [![Manual Build](https://github.com/aniketdarp190301/WolfTrack4.0/actions/workflows/main.yml/badge.svg)](https://github.com/aniketdarp190301/WolfTrack4.0/actions/workflows/main.yml)
 <!-- [![codecov](https://codecov.io/gh/nehajaideep/WolfTrack3.0/branch/Group10StableBranch/graph/badge.svg?token=0Q36G2YQC6)](https://codecov.io/gh/nehajaideep/WolfTrack3.0) -->
 [![codecov](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0/graph/badge.svg?token=3OWJ1DERO5)](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0)
-![GitHub language count](https://img.shields.io/github/languages/count/aniketdarp190301/WolfTrack4.0)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0)
+![GitHub language count](https://img.shields.io/github/languages/count/chinmay4613/SentiXplorer)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/chinmay4613/SentiXplorer)](https://github.com/chinmay4613/SentiXplorer)
 [![GitHub-size](https://img.shields.io/github/languages/code-size/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0)
-[![GitHub issues](https://img.shields.io/github/issues/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0)
-[![GitHub-closed-issues](https://img.shields.io/github/issues-closed-raw/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [Video link](https://www.youtube.com/watch?v=bRi_v8ERdq4&ab_channel=rushilpatel)
