@@ -8,6 +8,8 @@ class sentimentAnalyzerTestCases(unittest.TestCase):
     # Setup
     def setup(self):
         self.aa = audio_analyzer.AudioAnalyzer()
+        self.fa = face_analyzer.FaceAnalyzer()
+        self.da = document_analyzer.DocumentAnalyzer()
 
     # Test case for speech_to_text method
     def test_speech_to_text(self):
@@ -73,6 +75,16 @@ class sentimentAnalyzerTestCases(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
         mock_detailed_analysis.assert_called_once()
+        
+    def test_faceAnalysis_post(self, mock_detailed_analysis):
+        fa = face_analyzer.FaceAnalyzer()
+        self.client.force_login(self.user)
+        self.assertEqual(aa.get_face_analysis("photo.jpg"), {'angry': 28.152820467948914, 'disgust': 0.07459266926161945, 'fear': 7.343382388353348, 'happy': 0.00881423256942071, 'sad': 51.542818546295166, 'surprise': 0.30702848453074694, 'neutral': 12.570548057556152})
+
+    def test_documentAnalysis_post(self, mock_detailed_analysis):
+        da = document_analyzer.DocumentAnalyzer()
+        self.client.force_login(self.user)
+        self.assertEqual(da.input("document.pdf"), {'pos': 0.07604527235674442, 'neu': 0.9128369107191668, 'neg': 0.011117816924088688})
     
     def test_index_authenticated(self):
         self.client.force_login(self.user)
