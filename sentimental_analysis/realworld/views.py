@@ -24,11 +24,9 @@ from django.http import HttpResponse
 from googleapiclient.discovery import build
 from django.contrib.auth.decorators import login_required
 from .utilityFunctions import detailed_analysis
-<<<<<<< HEAD
 import tweepy
 import requests
 import praw
-=======
 import cv2 
 import matplotlib.pyplot as plt 
 from deepface import DeepFace 
@@ -36,7 +34,6 @@ from django.db import models
 
 class UploadedFile(models.Model):
     file = models.FileField(upload_to='uploads/')
->>>>>>> 134c311a5b59e2141979043891dc01dcf7310f87
 
 
 @register.filter(name='get_item')

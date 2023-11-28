@@ -49,58 +49,6 @@
             <!-- <li class="nav-item">
               <a class="nav-link" href="{% url 'index' %}">Home</a>
             </li> -->
-<<<<<<< HEAD
-            {% if current_user %}
-            <li class="nav-item">
-              <a class="nav-link" href="#">Hi, {{ current_user }}!</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'audio analysis' %}"
-                >Audio Analysis</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'youtube comments analysis' %}"
-                >YT Comments Analysis</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'youtube captions analysis' %}"
-                >YT Video Analysis</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'reddit data analysis' %}"
-                >Reddit Data Analysis</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'input' %}">Document Analysis</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'product analysis' %}"
-                >Product Analysis</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'text analysis' %}"
-                >Text Analysis</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
-=======
           {% if current_user %}
           <li class="nav-item">
             <a class="nav-link" href="#">Hi, {{ current_user }}!</a>
@@ -121,6 +69,11 @@
             <a class="nav-link" href="{% url 'product analysis' %}">Product Analysis</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'reddit data analysis' %}"
+              >Reddit Data Analysis</a
+            >
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'text analysis' %}">Text Analysis</a>
           </li>
           <li class="nav-item">
@@ -139,7 +92,6 @@
           </li>
           {% endif %}
         </ul>
->>>>>>> 134c311a5b59e2141979043891dc01dcf7310f87
       </div>
     </nav>
 
