@@ -4,7 +4,7 @@ Follow the set of guidelines below to contribute to SENG20-G19-G22 SE_Project1!
 
 ## Code of Conduct
 
-By participating, you are expected to uphold this code. Please report unacceptable behavior to sbangal2@ncsu.edu or rkulkar5@ncsu.edu
+By participating, you are expected to uphold this code. Please report unacceptable behavior to svaidya6@ncsu.edu
 
 Prerequistes required before starting this project
 
