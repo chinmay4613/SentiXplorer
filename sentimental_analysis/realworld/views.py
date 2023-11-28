@@ -174,9 +174,8 @@ def faceAnalysis(request):
             'cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
         return render(request, 'realworld/face_analysis_result.html', {"sentiment": result, "current_user":request.user})
     else:
-        result = get_face_analysis()
         note = "Please enter the facial photo you want to analyze"
-        return render(request, 'realworld/face_analysis.html', {'result': result, 'note':note})
+        return render(request, 'realworld/face_analysis.html', {'note':note, "current_user":request.user})
 
 @login_required(login_url="/login")
 def input(request):
