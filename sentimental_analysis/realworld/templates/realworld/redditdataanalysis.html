@@ -3,18 +3,13 @@
 
 {% block content%}
 <div class="container">
-  <h3 class="mt-5 mb-5" style="text-align: center;">Youtube Comments Analyser</h3>
+  <h3 class="mt-5 mb-5" style="text-align: center;">Reddit Data Analyser</h3>
   <p>{{ note }}</p>
-  <form id="yt-analysis" action="{% url "youtube comments analysis" %}" method="post" enctype="multipart/form-data">
+  <form id="reddit-data-analysis" action="{% url "reddit data analysis" %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <label for="ytid"></label>
+    <label for="keyword"></label>
     <div class="container" style="width: 100%;">
-      <input class="form-control form-control-lg" type="input" name="ytid" rows="10" cols="50"></input>
-      <br>
-      <i>
-        <p style="color:red">For example, in the <b>URL:</b>
-          https://www.youtube.com/watch?v=wU6udHRIkcc&ab_channel=AbdulBari, the <b>video ID</b> is wU6udHRIkcc.</p>
-      </i>
+      <input class="form-control form-control-lg" type="input" name="keyword" rows="10" cols="50"></input>
       <br>
       <i>
         <p style="color:red">*Please give the analyzer sometime to analyze*</p>

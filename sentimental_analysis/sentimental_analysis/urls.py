@@ -31,6 +31,7 @@ urlpatterns = [
     path('audioanalysis/', realworld.views.audioanalysis, name='audio analysis'),
     path('ytanalysis/',realworld.views.ytanalysis, name='youtube comments analysis'),
     path('ytcaptions/', realworld.views.ytcaptions, name='youtube captions analysis'),
+    path('redditdataanalysis/', realworld.views.reddit_analysis, name='reddit data analysis'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('accounts/profile/', realworld.views.index1, name='index1'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logged_out.html', next_page=None), name='logout'),

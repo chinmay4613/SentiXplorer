@@ -3,8 +3,7 @@ sys.path.append("../sentimental_analysis/audio/")
 import unittest
 import audio_analyzer
 
-# Unit Test Case for Audio Sentiment Analyzer
-class AudioSentimentAnalyzerTestCase(unittest.TestCase):
+class sentimentAnalyzerTestCases(unittest.TestCase):
     
     # Setup
     def setup(self):
@@ -19,7 +18,79 @@ class AudioSentimentAnalyzerTestCase(unittest.TestCase):
     def test_sentiment_analyzer_scores(self):
         aa = audio_analyzer.AudioAnalyzer()
         self.assertEqual(aa.sentiment_analyzer_scores("hello how are you")["pos"], 0)
+        
+    def test_textanalysis_post(self, mock_detailed_analysis):
+        mock_detailed_analysis.return_value = {'pos': 0.6, 'neu': 0.2, 'neg': 0.2}
 
+        self.client.force_login(self.user)
+        data = {'Text': 'This is a test text.'}
+        response = self.client.post(reverse('textanalysis'), data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
+        mock_detailed_analysis.assert_called_once_with(['This is a test text.'])
+        
+    def test_productanalysis_post(self, mock_detailed_analysis):
+        mock_detailed_analysis.return_value = {'pos': 0.4, 'neu': 0.3, 'neg': 0.3}
+
+        self.client.force_login(self.user)
+        data = {'blogname': 'https://example.com/product'}
+        response = self.client.post(reverse('productanalysis'), data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
+        mock_detailed_analysis.assert_called_once()
+    
+    def test_reddit_analysis_post(self, mock_detailed_analysis):
+        mock_detailed_analysis.return_value = {'pos': 0.5, 'neu': 0.3, 'neg': 0.2}
+
+        self.client.force_login(self.user)
+        data = {'keyword': 'python'}
+        response = self.client.post(reverse('reddit_analysis'), data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
+        mock_detailed_analysis.assert_called_once()
+
+    def test_ytcaptions_post(self, mock_detailed_analysis):
+        mock_detailed_analysis.return_value = {'pos': 0.6, 'neu': 0.2, 'neg': 0.2}
+
+        self.client.force_login(self.user)
+        data = {'ytid': 'abc123'}
+        response = self.client.post(reverse('ytcaptions'), data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
+        mock_detailed_analysis.assert_called_once()
+        
+    def test_ytanalysis_post(self, mock_detailed_analysis):
+        mock_detailed_analysis.return_value = {'pos': 0.5, 'neu': 0.3, 'neg': 0.2}
+
+        self.client.force_login(self.user)
+        data = {'ytid': 'abc123'}
+        response = self.client.post(reverse('ytanalysis'), data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'realworld/sentiment_graph.html')
+        mock_detailed_analysis.assert_called_once()
+    
+    def test_index_authenticated(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+    
+    def test_index_not_authenticated(self):
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+    #    
+    def test_register_post(self):
+        data = {
+            'username': 'newuser',
+            'password1': 'newpassword',
+            'password2': 'newpassword',
+        }
+        response = self.client.post(reverse('register'), data)
+        self.assertEqual(response.status_code, 200)
 
 # main function
 if __name__ == '__main__':
