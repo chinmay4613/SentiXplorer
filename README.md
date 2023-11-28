@@ -4,9 +4,7 @@
 <img src="https://github.com/chinmay4613/SentiXplorer/assets/56782318/9738b301-2545-41a7-b97a-59b9eef35792" alt="logo" width="350px"></img>
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10023452.svg)](https://zenodo.org/doi/10.5281/zenodo.10023451)
-[![GitHub Release](https://img.shields.io/github/release/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0/releases/tag/wolftrack)
-[![Manual Build](https://github.com/aniketdarp190301/WolfTrack4.0/actions/workflows/main.yml/badge.svg)](https://github.com/aniketdarp190301/WolfTrack4.0/actions/workflows/main.yml)
-<!-- [![codecov](https://codecov.io/gh/nehajaideep/WolfTrack3.0/branch/Group10StableBranch/graph/badge.svg?token=0Q36G2YQC6)](https://codecov.io/gh/nehajaideep/WolfTrack3.0) -->
+[![GitHub Release](https://img.shields.io/github/release/chinmay4613/SentiXplorer)](https://github.com/chinmay4613/SentiXplorer/releases/tag/wolftrack)
 [![codecov](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0/graph/badge.svg?token=3OWJ1DERO5)](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0)
 ![GitHub language count](https://img.shields.io/github/languages/count/chinmay4613/SentiXplorer)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/chinmay4613/SentiXplorer)](https://github.com/chinmay4613/SentiXplorer)
