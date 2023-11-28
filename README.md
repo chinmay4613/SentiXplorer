@@ -11,7 +11,7 @@
 [![GitHub-size](https://img.shields.io/github/languages/code-size/chinmay4613/SentiXplorer)](https://github.com/chinmay4613/SentiXplorer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Video link](https://www.youtube.com/watch?v=bRi_v8ERdq4&ab_channel=rushilpatel)
+[Video link](https://youtu.be/Q0KD6LURB5g)
 
 
 ## Introduction
