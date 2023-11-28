@@ -151,9 +151,9 @@ def detailed_analysis(result):
     return result_dict
 
 
-def get_face_analysis():
+def get_face_analysis(path):
     # read image 
-    img = cv2.imread('/Users/dhruvkolhatkar/Documents/Screenshots/happy.png') 
+    img = cv2.imread(path) 
     result = DeepFace.analyze(img,actions = ['emotion'])
     print(result[0]['emotion']) 
     return result[0]['emotion']
@@ -169,7 +169,7 @@ def faceAnalysis(request):
         extension_name = extension_name[len(extension_name)-3:]
         path = pathname+file.name
         print(path)
-        result = get_face_analysis()
+        result = get_face_analysis(path)
         os.system(
             'cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
         return render(request, 'realworld/face_analysis_result.html', {"sentiment": result, "current_user":request.user})
