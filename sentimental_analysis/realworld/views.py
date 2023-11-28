@@ -24,6 +24,13 @@ from django.http import HttpResponse
 from googleapiclient.discovery import build
 from django.contrib.auth.decorators import login_required
 from .utilityFunctions import detailed_analysis
+import cv2 
+import matplotlib.pyplot as plt 
+from deepface import DeepFace 
+from django.db import models
+
+class UploadedFile(models.Model):
+    file = models.FileField(upload_to='uploads/')
 
 
 @register.filter(name='get_item')
@@ -147,17 +154,29 @@ def detailed_analysis(result):
 def get_face_analysis():
     # read image 
     img = cv2.imread('/Users/dhruvkolhatkar/Documents/Screenshots/happy.png') 
-    result = DeepFace.analyze(img,actions = ['emotion']) 
-    return result
+    result = DeepFace.analyze(img,actions = ['emotion'])
+    print(result[0]['emotion']) 
+    return result[0]['emotion']
 
 @login_required(login_url="/login")
 def faceAnalysis(request):
     if request.method == 'POST':
+        file = request.FILES['document']
+        fs = FileSystemStorage()
+        fs.save(file.name, file)
+        pathname = "media/"
+        extension_name = file.name
+        extension_name = extension_name[len(extension_name)-3:]
+        path = pathname+file.name
+        print(path)
         result = get_face_analysis()
-        return render(request, 'realworld/face_analysis.html', {"result": result})
+        os.system(
+            'cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
+        return render(request, 'realworld/face_analysis_result.html', {"sentiment": result, "current_user":request.user})
     else:
         result = get_face_analysis()
-        return render(request, 'realworld/face_analysis.html', {'result': result})
+        note = "Please enter the facial photo you want to analyze"
+        return render(request, 'realworld/face_analysis.html', {'result': result, 'note':note})
 
 @login_required(login_url="/login")
 def input(request):
@@ -168,7 +187,7 @@ def input(request):
         pathname = "media/"
         extension_name = file.name
         extension_name = extension_name[len(extension_name)-3:]
-        path = pathname+file.name
+        path = pathname+file.namexs
         result = {}
         if extension_name == 'pdf':
             value = pdfparser(path)
@@ -192,6 +211,7 @@ def input(request):
                 text = r.recognize_google(audio_data)
                 value = text.split('.')
                 result = detailed_analysis(value)
+        print("YOLO",result)
         # Sentiment Analysis
         os.system(
             'cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
@@ -221,7 +241,6 @@ def productanalysis(request):
 
         # final_comment is a list of strings!
         result = detailed_analysis(final_comment)
-        print(result)
         return render(request, 'realworld/sentiment_graph.html', {"sentiment": result, "current_user": request.user})
 
     else:
@@ -238,7 +257,7 @@ def textanalysis(request):
 
         # final_comment is a list of strings!
         result = detailed_analysis(final_comment)
-        print(result)
+        print("yolo",result)
         return render(request, 'realworld/sentiment_graph.html', {'sentiment': result, "current_user": request.user})
     else:
         note = "Enter the Text to be analysed!"

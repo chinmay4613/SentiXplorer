@@ -37,5 +37,4 @@ urlpatterns = [
     path('register/', realworld.views.register, name='register'),
     path('faceAnalysis/', realworld.views.faceAnalysis, name='face_analysis'),
 ]
-
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
