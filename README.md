@@ -10,7 +10,7 @@
 [![codecov](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0/graph/badge.svg?token=3OWJ1DERO5)](https://codecov.io/gh/aniketdarp190301/WolfTrack4.0)
 ![GitHub language count](https://img.shields.io/github/languages/count/chinmay4613/SentiXplorer)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/chinmay4613/SentiXplorer)](https://github.com/chinmay4613/SentiXplorer)
-[![GitHub-size](https://img.shields.io/github/languages/code-size/aniketdarp190301/WolfTrack4.0)](https://github.com/aniketdarp190301/WolfTrack4.0)
+[![GitHub-size](https://img.shields.io/github/languages/code-size/chinmay4613/SentiXplorer)](https://github.com/chinmay4613/SentiXplorer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [Video link](https://www.youtube.com/watch?v=bRi_v8ERdq4&ab_channel=rushilpatel)
