@@ -124,6 +124,17 @@ Extend the developed Youtube comment analysis to Facebook, Twitter and LinkedIn 
 Audio diarization to split input audio in sections according to different speakers, to analyse individual speaker sentiment.
 
 
+
+## Developer Support and Updates
+
+For support and inquiries related to **SentiXplorer**, please contact us at **sentixplorer@gmail.com**. We are here to assist you and address any questions or issues you may have.
+
+Stay Connected:
+
+- **Discord Community**: Join our active Discord community at [https://discord.gg/sentixplorer](https://discord.gg/twPCh7AM) to engage with our team, ask questions, and stay up-to-date with the latest developments of the project.
+
+We appreciate your interest and look forward to providing you with the best possible support and updates.
+
 ## :handshake: Contributors
 
 <table>
