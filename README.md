@@ -116,10 +116,19 @@ The UI for URL input for comment analysis is as shown below:
 
 ![ytanal](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/youtube_comments_analysis.png)
 
+The UI for Reddit topic input is as shown below:
+![image](https://github.com/chinmay4613/SentiXplorer/assets/56782318/b5097a6f-07e6-44bd-854a-49f9aed76bd7)
+
+The UI for face analysis input is as shown below:
+![image](https://github.com/chinmay4613/SentiXplorer/assets/56782318/370c26c0-5d3f-4a07-a671-78263fd66f4e)
+
 The Output as below:
 
 ![output](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/analysis_bar_graph.png)
 ![out](https://github.com/MuskKat/SE_Project1/blob/master/screenshots/analysis_pie_chart.png)
+
+Output for Facial Analysis:
+![Screenshot (1306)](https://github.com/chinmay4613/SentiXplorer/assets/56782318/c56ff8f8-bdbb-4952-99ef-86b54f8eb516)
 
 ## Case Study: Amazon Product Review Sentiment and Text Analysis
 
@@ -135,9 +144,7 @@ The Output as below:
 ### Confusion Matrix
 ![conf](https://user-images.githubusercontent.com/9015214/97310260-631d5000-1839-11eb-9a3b-102fa9737439.png)
 
-
-
-## FUTURE SCOPE
+## Future Scope
 
 Store history for each user and the corresponding analysis results.
 
